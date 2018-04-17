@@ -1,4 +1,4 @@
-﻿//Merge Algorithm implementation class - Mohit Sahu
+//Merge Algorithm implementation class - Mohit Sahu
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,34 @@ using DiffPlex.DiffBuilder.Model;
 
 namespace DiffPlex
 {
+    /// <summary>
+    /// this is the class for meging 2 texts
+    /// </summary>
+    /// <description>
+    /// merging left and right texts and getting output as merged text
+    /// </description>
     public class Merger : IMerger
     {
-        public SideBySideDiffModel GetMergedText(SideBySideDiffModel model)
+        /// <summary>
+        /// this method is for merging 2 texts
+        /// </summary>
+        /// <description>
+        /// merging left and right texts
+        /// </description>
+        /// <something>
+        /// this is something
+        /// </something>
+        /// <param name="model">
+        /// <summary>
+        /// this method is for merging 2 texts
+        /// </summary>
+        /// <description>
+        /// merging left and right texts
+        /// </description>
+        /// </param>
+        /// <param name="model2">this is description for model2</param>
+        /// <returns>SideBySideDiffModel</returns>
+        public static SideBySideDiffModel GetMergedText(SideBySideDiffModel model, string model2)
         {
             DiffPaneModel mergedText = new DiffPaneModel();
 
@@ -47,6 +72,17 @@ namespace DiffPlex
 
             model.MergedText = mergedText;
             return model;
+        }
+
+        public SideBySideDiffModel GetMergedText(List<string> list)
+        {
+            //throw new NotImplementedException();
+            return new SideBySideDiffModel();
+        }
+
+        public SideBySideDiffModel GetMergedText(SideBySideDiffModel model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
