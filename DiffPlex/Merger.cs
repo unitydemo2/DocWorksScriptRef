@@ -1,4 +1,3 @@
-//Merge Algorithm implementation class - Mohit Sahu
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +14,63 @@ namespace DiffPlex
     /// </description>
     public class Merger : IMerger
     {
+        /// <summary>
+        /// enumerator for Merger
+        /// </summary>
+        /// <description>
+        /// this is the enumerator for example
+        /// </description>
+        /// <completionlist cref="ConsoleKey.BrowserSearch"/>
+        /// <example></example>
+        /// <include file='IMerger.cs' path='[@name="asd"]'/>
+        /// <permission cref="CLSCompliantAttribute.IsCompliant"></permission>
+        /// <remarks></remarks>
+        /// <see cref="decimal"/>
+        /// <seealso cref="InvalidTimeZoneException.InvalidTimeZoneException()"/>
+        public enum MergerEnum
+        {
+            LeftText,
+            RightText,
+            MergedText
+        }
+
+        public Merger()
+        {
+            Console.WriteLine("This is demo constructor");
+        }
+
+        /// <summary>
+        /// FieldExample1
+        /// </summary>
+        /// <description>
+        /// This is for generating Field example 1
+        /// </description>
+        public int FieldExample1;
+
+        /// <summary>
+        /// FieldExample2
+        /// </summary>
+        /// <description>
+        /// This is for generating Field example 2
+        /// </description>
+        public string FieldExample2;
+
+        /// <summary>
+        /// FieldExample2
+        /// </summary>
+        /// <description>
+        /// This is for generating Field example 2
+        /// </description>
+        public string Property1 { get; set; }
+
+        /// <summary>
+        /// FieldExample2
+        /// </summary>
+        /// <description>
+        /// This is for generating Field example 2
+        /// </description>
+        public long Property2 { get; set; }
+
         /// <summary>
         /// this method is for merging 2 texts
         /// </summary>
