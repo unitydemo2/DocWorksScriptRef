@@ -20,13 +20,6 @@ namespace DiffPlex
         /// <description>
         /// this is the enumerator for example
         /// </description>
-        /// <completionlist cref="ConsoleKey.BrowserSearch"/>
-        /// <example></example>
-        /// <include file='IMerger.cs' path='[@name="asd"]'/>
-        /// <permission cref="CLSCompliantAttribute.IsCompliant"></permission>
-        /// <remarks></remarks>
-        /// <see cref="decimal"/>
-        /// <seealso cref="InvalidTimeZoneException.InvalidTimeZoneException()"/>
         public enum MergerEnum
         {
             LeftText,
@@ -90,6 +83,13 @@ namespace DiffPlex
         /// </param>
         /// <param name="model2">this is description for model2</param>
         /// <returns>SideBySideDiffModel</returns>
+        /// <completionlist cref="ConsoleKey.BrowserSearch"/>
+        /// <example></example>
+        /// <include file='IMerger.cs' path='[@name="asd"]'/>
+        /// <permission cref="CLSCompliantAttribute.IsCompliant"></permission>
+        /// <remarks></remarks>
+        /// <see cref="decimal"/>
+        /// <seealso cref="InvalidTimeZoneException.InvalidTimeZoneException()"/>
         public static SideBySideDiffModel GetMergedText(SideBySideDiffModel model, string model2)
         {
             DiffPaneModel mergedText = new DiffPaneModel();
