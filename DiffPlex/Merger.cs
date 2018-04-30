@@ -26,7 +26,10 @@ namespace DiffPlex
             RightText,
             MergedText
         }
-
+ 
+        /// <summary>
+        /// summary for constructor pull test
+        /// </summary>
         public Merger()
         {
             Console.WriteLine("This is demo constructor");
