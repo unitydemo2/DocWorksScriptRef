@@ -28,7 +28,7 @@ namespace DiffPlex
         }
  
         /// <summary>
-        /// summary for constructor pull test
+        /// summary for constructor pull test commit test
         /// </summary>
         public Merger()
         {
