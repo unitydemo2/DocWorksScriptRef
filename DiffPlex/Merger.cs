@@ -52,18 +52,18 @@ namespace DiffPlex
         public string FieldExample2;
 
         /// <summary>
-        /// FieldExample2
+        /// Property 1
         /// </summary>
         /// <description>
-        /// This is for generating Field example 2
+        /// This is for generating Property 1
         /// </description>
         public string Property1 { get; set; }
 
         /// <summary>
-        /// FieldExample2
+        /// Property 2
         /// </summary>
         /// <description>
-        /// This is for generating Field example 2
+        /// This is for generating Property 2
         /// </description>
         public long Property2 { get; set; }
 
