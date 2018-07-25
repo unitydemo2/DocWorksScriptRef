@@ -6,13 +6,13 @@ using DiffPlex.DiffBuilder.Model;
 
 namespace DiffPlex
 {
-    /// <summary>
-    /// this is the class for meging 2 texts
-    /// </summary>
-    /// <description>
-    /// merging left and right texts and getting output as merged text
-    /// </description>
-    public class Merger : IMerger
+    ///     <summary>
+    ///     this is the class for meging 2 texts
+    ///     </summary>
+    ///     <description>
+    ///     merging left and right texts and getting output as merged text
+    ///     </description>
+        public class Merger : IMerger
     {
         /// <summary>
         /// enumerator for Merger
@@ -28,12 +28,23 @@ namespace DiffPlex
         }
  
         /// <summary>
-        /// summary for constructor pull test commit test
+        /// Property 2
         /// </summary>
-        public Merger()
+        /// <description>
+        /// This is for generating Property 2
+        /// </description>
+                public Merger()
         {
             Console.WriteLine("This is demo constructor");
         }
+
+        /// <summary>
+        /// this is the class for meging 2 texts
+        /// </summary>
+        /// <description>
+        /// merging left and right texts and getting output as merged text
+        /// </description>
+                public int FieldExample1;
 
         /// <summary>
         /// FieldExample1
@@ -41,7 +52,7 @@ namespace DiffPlex
         /// <description>
         /// This is for generating Field example 1
         /// </description>
-        public int FieldExample1;
+                public string FieldExample2;
 
         /// <summary>
         /// FieldExample2
@@ -49,7 +60,7 @@ namespace DiffPlex
         /// <description>
         /// This is for generating Field example 2
         /// </description>
-        public string FieldExample2;
+                public string Property1 { get; set; }
 
         /// <summary>
         /// Property 1
@@ -57,43 +68,12 @@ namespace DiffPlex
         /// <description>
         /// This is for generating Property 1
         /// </description>
-        public string Property1 { get; set; }
+                public long Property2 { get; set; }
 
         /// <summary>
-        /// Property 2
+        /// summary for constructor pull test commit test
         /// </summary>
-        /// <description>
-        /// This is for generating Property 2
-        /// </description>
-        public long Property2 { get; set; }
-
-        /// <summary>
-        /// this method is for merging 2 texts
-        /// </summary>
-        /// <description>
-        /// merging left and right texts
-        /// </description>
-        /// <something>
-        /// this is something
-        /// </something>
-        /// <param name="model">
-        /// <summary>
-        /// this method is for merging 2 texts
-        /// </summary>
-        /// <description>
-        /// merging left and right texts
-        /// </description>
-        /// </param>
-        /// <param name="model2">this is description for model2</param>
-        /// <returns>SideBySideDiffModel</returns>
-        /// <completionlist cref="ConsoleKey.BrowserSearch"/>
-        /// <example></example>
-        /// <include file='IMerger.cs' path='[@name="asd"]'/>
-        /// <permission cref="CLSCompliantAttribute.IsCompliant"></permission>
-        /// <remarks></remarks>
-        /// <see cref="decimal"/>
-        /// <seealso cref="InvalidTimeZoneException.InvalidTimeZoneException()"/>
-        public static SideBySideDiffModel GetMergedText(SideBySideDiffModel model, string model2)
+                public static SideBySideDiffModel GetMergedText(SideBySideDiffModel model, string model2)
         {
             DiffPaneModel mergedText = new DiffPaneModel();
 
@@ -133,12 +113,54 @@ namespace DiffPlex
             return model;
         }
 
+        /// <summary>
+        /// this method is for merging 2 texts
+        /// </summary>
+        /// <description>
+        /// merging left and right texts
+        /// </description>
+        /// <return>
+        /// SideBySideDiffModel
+        /// </return>
+        /// <param name="model">
+        /// <summary>
+        /// this method is for merging 2 texts
+        /// </summary>
+        /// </parameter1>
+        /// <param name="model">
+        /// <description>
+        /// merging left and right texts
+        /// </description>
+        /// </parameter1>
+        /// <param name="model2">
+        /// this is description for model2
+        /// </parameter2>
+        /// <something>
+        /// this is something
+        /// </something>
+        /// <completionlist>
+        /// </completionlist>
+        /// <example>
+        /// </example>
+        /// <include>
+        /// </include>
+        /// <permission>
+        /// </permission>
+        /// <remarks>
+        /// </remarks>
+        /// <see>
+        /// </see>
+        /// <seealso>
+        /// </seealso>
         public SideBySideDiffModel GetMergedText(List<string> list)
         {
             //throw new NotImplementedException();
             return new SideBySideDiffModel();
         }
 
+        /// <summary>
+        /// This is madhu testing
+        /// </summary>
         public SideBySideDiffModel GetMergedText(SideBySideDiffModel model)
         {
             throw new NotImplementedException();
