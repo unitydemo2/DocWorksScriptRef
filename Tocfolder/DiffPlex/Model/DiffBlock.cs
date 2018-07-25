@@ -7,6 +7,8 @@
     {
         /// <summary>
         /// Position where deletions in A begin
+        ///  ![abc](../../../DevImages/Enfiled.jpg)
+        ///  ![abc](Enfiled.jpg)
         /// </summary>
         public int DeleteStartA { get; }
 
