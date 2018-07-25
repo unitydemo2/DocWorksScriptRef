@@ -19,6 +19,7 @@ using UnityEditor.Connect;
 
 namespace UnityEditor
 {
+    
     public partial class BuildPlayerWindow : EditorWindow
     {
         class Styles
@@ -154,6 +155,7 @@ namespace UnityEditor
 
         static Styles styles = null;
 
+        
         public static void ShowBuildPlayerWindow()
         {
             EditorUserBuildSettings.selectedBuildTargetGroup = EditorUserBuildSettings.activeBuildTargetGroup;
@@ -180,6 +182,7 @@ namespace UnityEditor
             CallBuildMethods(askForBuildLocation, BuildOptions.AutoRunPlayer | BuildOptions.StrictMode);
         }
 
+        
         public BuildPlayerWindow()
         {
             position = new Rect(50, 50, 540, 530);
@@ -494,6 +497,7 @@ namespace UnityEditor
             { "LinuxStandalone", "Linux" },
             { "Facebook", "Facebook-Games"}
         };
+        
         static public string GetPlaybackEngineDownloadURL(string moduleName)
         {
             if (moduleName == "PS4" || moduleName == "PSP2" || moduleName == "XboxOne")
