@@ -9,6 +9,7 @@
         /// Position where deletions in A begin
         ///  ![abc](../../../DevImages/Enfiled.jpg)
         ///  ![abc](Enfiled.jpg)
+        /// [sample](Examples/sample.cs)
         /// </summary>
         public int DeleteStartA { get; }
 
