@@ -12,7 +12,7 @@ namespace DiffPlex
     ///     <description>
     ///     merging left and right texts and getting output as merged text
     ///     </description>
-        public class Merger : IMerger
+            public class Merger : IMerger
     {
         /// <summary>
         /// enumerator for Merger
@@ -33,18 +33,18 @@ namespace DiffPlex
         /// <description>
         /// This is for generating Property 2
         /// </description>
-                public Merger()
+                        public Merger()
         {
             Console.WriteLine("This is demo constructor");
         }
 
         /// <summary>
-        /// this is the class for meging 2 texts
+        /// this is the class for merging 2 texts
         /// </summary>
         /// <description>
         /// merging left and right texts and getting output as merged text
         /// </description>
-                public int FieldExample1;
+                        public int FieldExample1;
 
         /// <summary>
         /// FieldExample1
@@ -52,7 +52,7 @@ namespace DiffPlex
         /// <description>
         /// This is for generating Field example 1
         /// </description>
-                public string FieldExample2;
+                        public string FieldExample2;
 
         /// <summary>
         /// FieldExample2
@@ -60,7 +60,7 @@ namespace DiffPlex
         /// <description>
         /// This is for generating Field example 2
         /// </description>
-                public string Property1 { get; set; }
+                        public string Property1 { get; set; }
 
         /// <summary>
         /// Property 1
@@ -68,12 +68,12 @@ namespace DiffPlex
         /// <description>
         /// This is for generating Property 1
         /// </description>
-                public long Property2 { get; set; }
+                        public long Property2 { get; set; }
 
         /// <summary>
         /// summary for constructor pull test commit test
         /// </summary>
-                public static SideBySideDiffModel GetMergedText(SideBySideDiffModel model, string model2)
+                        public static SideBySideDiffModel GetMergedText(SideBySideDiffModel model, string model2)
         {
             DiffPaneModel mergedText = new DiffPaneModel();
 
@@ -152,7 +152,7 @@ namespace DiffPlex
         /// </see>
         /// <seealso>
         /// </seealso>
-        public SideBySideDiffModel GetMergedText(List<string> list)
+                public SideBySideDiffModel GetMergedText(List<string> list)
         {
             //throw new NotImplementedException();
             return new SideBySideDiffModel();
@@ -161,7 +161,7 @@ namespace DiffPlex
         /// <summary>
         /// This is madhu testing
         /// </summary>
-        public SideBySideDiffModel GetMergedText(SideBySideDiffModel model)
+                public SideBySideDiffModel GetMergedText(SideBySideDiffModel model)
         {
             throw new NotImplementedException();
         }
