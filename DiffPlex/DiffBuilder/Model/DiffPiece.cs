@@ -2,12 +2,22 @@ using System.Collections.Generic;
 
 namespace DiffPlex.DiffBuilder.Model
 {
+  
   public enum ChangeType
   {
+    /// <summary>
+    /// hkuyiolkj
+    /// </summary>
     Unchanged,
+    /// <summary>
+    /// aasf
+    /// </summary>
     Deleted,
+    
     Inserted,
+    
     Imaginary,
+    
     Modified
   }
 
