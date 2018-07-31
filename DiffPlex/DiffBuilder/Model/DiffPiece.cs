@@ -3,20 +3,29 @@ using System.Collections.Generic;
 namespace DiffPlex.DiffBuilder.Model
 {
   
+  
   public enum ChangeType
   {
     /// <summary>
     /// ***Madhubanti***
     /// </summary>
-    Unchanged,
+        Unchanged,
     /// <summary>
     /// **Bhattacharya**
     /// </summary>
-    Deleted,
+        Deleted,
     
+    /// <summary>
+    /// This is last try 
+    /// \*  Eee 
+    /// \*  Ttt 
+    /// \*  yyy
+    /// </summary>
     Inserted,
     
+    
     Imaginary,
+    
     
     Modified
   }
