@@ -1,19 +1,30 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using DiffPlex.DiffBuilder.Model;
 using DiffPlex.Model;
 
 namespace DiffPlex.DiffBuilder
 {
+    
     public class InlineDiffBuilder : IInlineDiffBuilder
     {
         private readonly IDiffer differ;
 
+        /// <summary>
+        /// *testItalic*
+        /// </summary>
         public InlineDiffBuilder(IDiffer differ)
         {
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
+        /// <summary>
+        /// \*  Kkhkj 
+        /// \*  Hkihkl 
+        /// \*  Uyiuyiy 
+        /// \*  Uyiuyiu 
+        /// \*  uuyiuy
+        /// </summary>
         public DiffPaneModel BuildDiffModel(string oldText, string newText)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
