@@ -6,6 +6,7 @@ using DiffPlex.Model;
 namespace DiffPlex.DiffBuilder
 {
     
+    
     public class InlineDiffBuilder : IInlineDiffBuilder
     {
         private readonly IDiffer differ;
@@ -13,19 +14,15 @@ namespace DiffPlex.DiffBuilder
         /// <summary>
         /// *testItalic*
         /// </summary>
-        public InlineDiffBuilder(IDiffer differ)
+                public InlineDiffBuilder(IDiffer differ)
         {
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
         /// <summary>
-        /// \*  Kkhkj 
-        /// \*  Hkihkl 
-        /// \*  Uyiuyiy 
-        /// \*  Uyiuyiu 
-        /// \*  uuyiuy
+        /// <br>*  Kkhkj <br>*  Hkihkl <br>*  Uyiuyiy <br>*  Uyiuyiu <br>*  uuyiuy
         /// </summary>
-        public DiffPaneModel BuildDiffModel(string oldText, string newText)
+                public DiffPaneModel BuildDiffModel(string oldText, string newText)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
             if (newText == null) throw new ArgumentNullException(nameof(newText));
