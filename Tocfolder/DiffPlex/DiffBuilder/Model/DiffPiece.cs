@@ -13,6 +13,8 @@ namespace DiffPlex.DiffBuilder.Model
 
   public class DiffPiece
   {
+    
+    
     public ChangeType Type { get; set; }
     public int? Position { get; set; }
     public string Text { get; set; }
@@ -31,6 +33,12 @@ namespace DiffPlex.DiffBuilder.Model
       BorderStyle = null;
     }
 
+    ///     <summary>
+    ///     Position where deletions in A begin
+    ///      ![abc](../../../DevImages/Enfiled.jpg)
+    ///  ![abc](Enfiled.jpg)
+    /// [sample](sample.cs)
+		///     </summary>
     public DiffPiece()
         : this(null, ChangeType.Imaginary)
     {
