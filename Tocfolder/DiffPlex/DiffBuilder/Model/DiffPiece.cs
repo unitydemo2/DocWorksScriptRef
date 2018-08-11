@@ -38,6 +38,8 @@ namespace DiffPlex.DiffBuilder.Model
     ///      ![abc](../../../DevImages/Enfiled.jpg)
     ///  ![abc](Enfiled.jpg)
     /// [sample](sample.cs)
+    /// Hi its me.	  
+	  
 		///     </summary>
     public DiffPiece()
         : this(null, ChangeType.Imaginary)
