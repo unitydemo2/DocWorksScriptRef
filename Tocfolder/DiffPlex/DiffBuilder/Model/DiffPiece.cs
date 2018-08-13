@@ -40,8 +40,10 @@ namespace DiffPlex.DiffBuilder.Model
   
   
   
+  
   public class DiffPiece
   {
+    
     
     
     
@@ -53,7 +55,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public int? Position { get; set; }
+    
     
     
     
@@ -63,7 +67,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public List<DiffPiece> SubPieces { get; set; } = new List<DiffPiece>();
+    
     
     
     
@@ -73,13 +79,16 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public string Conflict { get; set; }
+    
     
     
     
     
     public string BorderStyle { get; set; }
 
+    
     
     
     
@@ -95,7 +104,7 @@ namespace DiffPlex.DiffBuilder.Model
     }
 
     ///         <!-- Badly formed XML comment ignored for member "M:DiffPlex.DiffBuilder.Model.DiffPiece.#ctor" -->
-                	  
+                    	  
 		    public DiffPiece()
         : this(null, ChangeType.Imaginary)
     {
