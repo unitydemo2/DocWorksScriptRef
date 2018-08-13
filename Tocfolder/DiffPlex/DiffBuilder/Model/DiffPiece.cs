@@ -10,7 +10,7 @@ namespace DiffPlex.DiffBuilder.Model
     
     ///     <summary>
     ///      ![abc](Enfiled.jpg)
-    ///     [sample](sample.cs) sbcdfsfssdfgs asdfasfasfd 
+    ///     [sample](sample.cs) sbcdfsfssdfgs asdfasfasfd asdfadfa
     ///     </summary>
         Unchanged,
     
