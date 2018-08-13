@@ -7,7 +7,10 @@ namespace DiffPlex.DiffBuilder.Model
   public enum ChangeType
   {
     
-    
+    /// <summary>
+    ///  ![abc](Enfiled.jpg)
+    /// [sample](sample.cs)
+    /// </summary>
     Unchanged,
     
     
