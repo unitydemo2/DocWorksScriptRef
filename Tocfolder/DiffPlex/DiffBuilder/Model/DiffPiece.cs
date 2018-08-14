@@ -22,20 +22,11 @@ namespace DiffPlex.DiffBuilder.Model
   public enum ChangeType
   {
     
-    ///         <summary>
-    ///          <dw-image>5b6c27ce5b416027c012a509</dw-image>
-    ///         <dw-code>5b6c27ce5b416027c012a50a</dw-code> s
-    ///         </summary>
-                                            Unchanged,
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    ///     <summary>
+    ///      ![abc](Enfiled.jpg)
+    ///     [sample](sample.cs) sasfdasf asfa
+    ///     </summary>
+        Unchanged,
     
     
     
