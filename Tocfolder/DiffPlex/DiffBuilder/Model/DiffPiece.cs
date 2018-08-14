@@ -10,18 +10,21 @@ namespace DiffPlex.DiffBuilder.Model
   
   
   
+  
   public enum ChangeType
   {
     
-    ///     <summary>
-    ///      ![abc](Enfiled.jpg)
-    ///     [sample](sample.cs) s
-    ///     </summary>
-        Unchanged,
+    ///         <summary>
+    ///          ![abc](Enfiled.jpg)
+    ///         [sample](sample.cs) s
+    ///         </summary>
+            Unchanged,
+    
     
     
     
     Deleted,
+    
     
     
     
@@ -39,7 +42,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     Imaginary,
+    
     
     
     
