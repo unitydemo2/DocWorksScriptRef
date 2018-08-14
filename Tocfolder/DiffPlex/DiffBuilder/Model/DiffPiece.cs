@@ -18,6 +18,7 @@ namespace DiffPlex.DiffBuilder.Model
   
   
   
+  
   public enum ChangeType
   {
     
@@ -25,7 +26,8 @@ namespace DiffPlex.DiffBuilder.Model
     ///          <dw-image>5b6c27ce5b416027c012a509</dw-image>
     ///         <dw-code>5b6c27ce5b416027c012a50a</dw-code> s
     ///         </summary>
-                                        Unchanged,
+                                            Unchanged,
+    
     
     
     
@@ -38,6 +40,7 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     Deleted,
+    
     
     
     
@@ -71,7 +74,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     Imaginary,
+    
     
     
     
