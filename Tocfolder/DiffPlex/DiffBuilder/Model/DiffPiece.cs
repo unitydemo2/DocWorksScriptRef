@@ -22,14 +22,16 @@ namespace DiffPlex.DiffBuilder.Model
   
   
   
+  
   public enum ChangeType
   {
     
     ///         <summary>
-    ///          ![abc](Enfiled_5b72693376884f061856f78b.jpg)
-    ///         [5b72693376884f061856f78c](Examples/sample_5b72693376884f061856f78c.cs) sasfdasf asfa
+    ///          ![abc](Enfiled_5b72693476884f061856f78d.jpg)
+    ///         [5b6c27ce5b416027c012a50a](sample_5b6c27ce5b416027c012a50a.cs) sasfdasf asfa
     ///         </summary>
-                    Unchanged,
+                        Unchanged,
+    
     
     
     
@@ -37,6 +39,7 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     Deleted,
+    
     
     
     
@@ -78,7 +81,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     Imaginary,
+    
     
     
     
