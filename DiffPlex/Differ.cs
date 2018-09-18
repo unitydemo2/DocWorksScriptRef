@@ -5,16 +5,19 @@ using DiffPlex.Model;
 namespace DiffPlex
 {
     
+    
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
+        
         
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
@@ -26,11 +29,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
@@ -52,11 +57,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        
         
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators)
         {
@@ -73,11 +80,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker)
         {
             return CreateCustomDiffs(oldText, newText, ignoreWhiteSpace, false, chunker);
         }
 
+        
         
         public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, bool ignoreCase, Func<string, string[]> chunker)
         {
@@ -160,7 +169,7 @@ namespace DiffPlex
         ///     <param name="startB">lower bound inclusive</param>
         ///     <param name="endB">upper bound exclusive</param>
         ///     <returns></returns>
-                protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -308,6 +317,7 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        
         
         protected static void BuildModificationData(ModificationData A, ModificationData B)
         {
