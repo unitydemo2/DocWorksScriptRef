@@ -23,11 +23,7 @@ namespace DiffPlex.Model
         ///     </summary>
                         public IList<DiffBlock> DiffBlocks { get; }
 
-                 ///     <summary>
-        ///     A collection of DiffBlocks which details deletions and insertions
-        ///     </summary>
-                        public IList<DiffBlock> DiffBlocks { get222; }
-        
+                
         
         public DiffResult(string[] peicesOld, string[] piecesNew, IList<DiffBlock> blocks)
         {
