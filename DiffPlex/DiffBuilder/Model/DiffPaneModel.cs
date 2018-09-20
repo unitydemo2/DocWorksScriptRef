@@ -5,19 +5,25 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    /// <summary>
+    /// unitycms
+    /// </summary>
     public class DiffPaneModel
     {
         
         
         
+        /// <summary>
+        /// Sirisha nalamadugu![](test 04_5ba0fc53ee4d6b20c491bde6.jpg)
+        /// </summary>
         public List<DiffPiece> Lines { get; }
 
         
         
         /// <summary>
-        /// ![](test45_5b9f39c873e69b0454e7d054.jpg)
+        /// Etryry tytutuuuyyu uytuyu dhgfytuiyjiuykhjkyuikj
         /// </summary>
-        public DiffPaneModel()
+                public DiffPaneModel()
         {
             Lines = new List<DiffPiece>();
         }
