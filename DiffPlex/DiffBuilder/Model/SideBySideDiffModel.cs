@@ -1,7 +1,7 @@
 namespace DiffPlex.DiffBuilder.Model
 {
     ///     <summary>
-    ///     A model which represents differences between to texts to be shown side by side
+    ///     This is the edited content
     ///     </summary>
         public class SideBySideDiffModel
     {
