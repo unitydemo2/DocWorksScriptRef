@@ -6,7 +6,7 @@ namespace DiffPlex.Model
         public class DiffBlock
     {
         ///     <summary>
-        ///     Position where deletions in A begin
+        ///     Position where deletions in A begin,updated from source controller
         ///     </summary>
                 public int DeleteStartA { get; }
 
