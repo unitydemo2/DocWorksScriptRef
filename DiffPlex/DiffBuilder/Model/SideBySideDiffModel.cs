@@ -5,7 +5,11 @@ namespace DiffPlex.DiffBuilder.Model
     ///     </summary>
         public class SideBySideDiffModel
     {
-        
+            
+    ///     </summary>
+    ///     This is the content for OldTest
+    ///     </summary>
+                
         public DiffPaneModel OldText { get; }
         
         public DiffPaneModel NewText { get; }
