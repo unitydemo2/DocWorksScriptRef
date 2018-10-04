@@ -5,17 +5,26 @@ using DiffPlex.Model;
 namespace DiffPlex
 {
     
+    /// <summary>
+    /// ![](png_5bb5942b84d9ef020c737cd9.png)
+    /// </summary>
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
         
+        /// <summary>
+        /// ![](Dove-5ba4a0ddee4d6b20c491d070_5ba5fd91015cc616d89dc85a.jpg)
+        /// </summary>
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
         
+        /// <summary>
+        /// ![](flowers_5ba0fc17ee4d6b20c491bde1.gif)
+        /// </summary>
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -26,11 +35,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
@@ -52,11 +63,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        
         
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators)
         {
@@ -150,17 +163,24 @@ namespace DiffPlex
             return list.ToArray();
         }
 
-        ///     <summary>
-        ///     Finds the middle snake and the minimum length of the edit script comparing string A and B
-        ///     </summary>
-        ///     <param name="A"></param>
-        ///     <param name="startA">Lower bound inclusive</param>
-        ///     <param name="endA">Upper bound exclusive</param>
-        ///     <param name="B"></param>
-        ///     <param name="startB">lower bound inclusive</param>
-        ///     <param name="endB">upper bound exclusive</param>
-        ///     <returns></returns>
-                protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+        /// <summary>
+        /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+        /// </summary>
+        /// <return>
+        /// </return>
+        /// <param name="startA">
+        /// Lower bound inclusive
+        /// </param>
+        /// <param name="endA">
+        /// Upper bound exclusive
+        /// </param>
+        /// <param name="startB">
+        /// lower bound inclusive
+        /// </param>
+        /// <param name="endB">
+        /// upper bound exclusive
+        /// </param>
+                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -308,6 +328,7 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        
         
         protected static void BuildModificationData(ModificationData A, ModificationData B)
         {
