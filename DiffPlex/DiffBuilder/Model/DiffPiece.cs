@@ -16,6 +16,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     Modified
   }
+  /// <summary> 
+  /// Edited this box for testing pull operations
+  /// </summary>
 
   
   public class DiffPiece
