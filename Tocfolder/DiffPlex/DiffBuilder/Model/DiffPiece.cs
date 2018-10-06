@@ -1,5 +1,7 @@
 using System.Collections.Generic;
-
+///<Summary>
+///Edited for testing
+///</Summary>
 namespace DiffPlex.DiffBuilder.Model
 {
   public enum ChangeType
