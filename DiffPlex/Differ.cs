@@ -4,21 +4,43 @@ using DiffPlex.Model;
 
 namespace DiffPlex
 {
+    [Obsolete]
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
+
+        /// <summary>
+        /// this is the property for 
+        /// </summary>
+        [Obsolete]
+        public string obsoletedPropertyForTesting { get; set; }
 
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        /// <summary>
+        /// this method is to find diffs in 2 texts
+        /// </summary>
+        /// <param name="oldText">this param is for existing text</param>
+        /// <param name="newText">
+        /// <summary>
+        /// this param is for updated text
+        /// </summary>
+        /// </param>
+        /// <param name="ignoreWhitespace"></param>
+        /// <param name="ignoreCase"></param>
+        /// <returns>
+        /// <summary>
+        /// this method returns result of both text
+        /// </summary>
+        /// </returns>
+        [Obsolete]
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
             if (newText == null) throw new ArgumentNullException(nameof(newText));
-
-
             return CreateCustomDiffs(oldText, newText, ignoreWhitespace, ignoreCase, str => str.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None));
         }
 
@@ -230,7 +252,7 @@ namespace DiffPlex
                         {
                             return new EditLengthResult
                             {
-                                EditLength = 2*D - 1,
+                                EditLength = 2 * D - 1,
                                 StartX = startX + startA,
                                 StartY = startY + startB,
                                 EndX = x + startA,
@@ -284,7 +306,7 @@ namespace DiffPlex
                         {
                             return new EditLengthResult
                             {
-                                EditLength = 2*D,
+                                EditLength = 2 * D,
                                 StartX = x + startA,
                                 StartY = y + startB,
                                 EndX = endX + startA,
