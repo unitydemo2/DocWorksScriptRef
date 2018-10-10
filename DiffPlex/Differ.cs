@@ -4,6 +4,10 @@ using DiffPlex.Model;
 
 namespace DiffPlex
 {
+   
+     /// <summary>
+    /// This is the summary for Differ,which is added to test pull operations
+    /// </summary>
     
     public class Differ : IDiffer
     {
