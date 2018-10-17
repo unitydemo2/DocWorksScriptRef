@@ -17,8 +17,8 @@ namespace DiffPlex.DiffBuilder.Model
     Modified
   }
  /// <summary>
-    /// ![abc](Flower3.jpg)
-    /// </summary>
+ /// ![abc](Flower3.jpg)
+ /// </summary>
   
   public class DiffPiece
   {
