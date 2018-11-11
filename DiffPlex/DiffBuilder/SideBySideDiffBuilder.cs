@@ -9,6 +9,7 @@ namespace DiffPlex.DiffBuilder
     
     
     
+    
     public class SideBySideDiffBuilder : ISideBySideDiffBuilder
     {
         private readonly IDiffer differ;
@@ -19,8 +20,10 @@ namespace DiffPlex.DiffBuilder
         
         
         
+        
         public static readonly char[] WordSeparaters = {' ', '\t', '.', '(', ')', '{', '}', ',', '!'};
 
+        
         
         
         
@@ -30,6 +33,7 @@ namespace DiffPlex.DiffBuilder
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
+        
         
         
         
