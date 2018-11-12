@@ -20,8 +20,9 @@ namespace DiffPlex
         ///     <description>
         ///     this is the enumerator for example
         ///     </description>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        public enum MergerEnum
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                public enum MergerEnum
         {
+            
             
             
             
@@ -163,7 +164,9 @@ namespace DiffPlex
             
             
             
+            
             RightText,
+            
             
             
             
