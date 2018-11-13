@@ -6,8 +6,9 @@ namespace DiffPlex
     ///     <summary>
     ///     Provides methods for generate differences between texts
     ///     </summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            public interface IDiffer
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                public interface IDiffer
     {
+        
         
         
         
@@ -341,7 +342,9 @@ namespace DiffPlex
         
         
         
+        
         DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase);
+        
         
         
         
@@ -675,7 +678,9 @@ namespace DiffPlex
         
         
         
+        
         DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase);
+        
         
         
         
@@ -1009,6 +1014,7 @@ namespace DiffPlex
         
         
         
+        
         DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators);
         
         
@@ -1176,7 +1182,9 @@ namespace DiffPlex
         
         
         
+        
         DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker);
+        
         
         
         
