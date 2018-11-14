@@ -6,6 +6,7 @@ using DiffPlex.Model;
 namespace DiffPlex.DiffBuilder
 {
     
+    
     public class SideBySideDiffBuilder : ISideBySideDiffBuilder
     {
         private readonly IDiffer differ;
@@ -13,14 +14,17 @@ namespace DiffPlex.DiffBuilder
         private delegate void PieceBuilder(string oldText, string newText, List<DiffPiece> oldPieces, List<DiffPiece> newPieces);
 
         
+        
         public static readonly char[] WordSeparaters = {' ', '\t', '.', '(', ')', '{', '}', ',', '!'};
 
+        
         
         public SideBySideDiffBuilder(IDiffer differ)
         {
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
+        
         
         public SideBySideDiffModel BuildDiffModel(string oldText, string newText)
         {
