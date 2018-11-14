@@ -285,6 +285,7 @@ namespace DiffPlex
     
     
     
+    
     [Obsolete]
     public class Differ : IDiffer
     {
@@ -293,9 +294,10 @@ namespace DiffPlex
         ///     <summary>
         ///     this is the property for 
         ///     </summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                [Obsolete]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        
         
         
         
@@ -583,7 +585,7 @@ namespace DiffPlex
         }
 
         /// <!-- Badly formed XML comment ignored for member "M:DiffPlex.Differ.CreateLineDiffs(System.String,System.String,System.Boolean,System.Boolean)" -->
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                [Obsolete]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [Obsolete]
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -872,11 +874,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         
         
@@ -1458,11 +1462,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        
         
         
         
@@ -2039,11 +2045,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker)
         {
             return CreateCustomDiffs(oldText, newText, ignoreWhiteSpace, false, chunker);
         }
 
+        
         
         
         
@@ -2406,7 +2414,7 @@ namespace DiffPlex
         ///     <param name="startB">lower bound inclusive</param>
         ///     <param name="endB">upper bound exclusive</param>
         ///     <returns></returns>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -2554,6 +2562,7 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        
         
         
         
