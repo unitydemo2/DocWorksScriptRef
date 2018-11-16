@@ -11,13 +11,16 @@ namespace DiffPlex
     
     
     
+    
     public interface IMerger
     {
         
         
         
+        
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         
         
