@@ -26,8 +26,10 @@ namespace DiffPlex.DiffBuilder
     
     
     
+    
     public interface IInlineDiffBuilder
     {
+        
         
         
         
