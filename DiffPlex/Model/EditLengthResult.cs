@@ -78,8 +78,10 @@ namespace DiffPlex.Model
     
     
     
+    
     public class EditLengthResult
     {
+        
         
         
         
@@ -100,7 +102,9 @@ namespace DiffPlex.Model
         
         
         
+        
         public int StartX { get; set; }
+        
         
         
         
@@ -120,7 +124,9 @@ namespace DiffPlex.Model
         
         
         
+        
         public int StartY { get; set; }
+        
         
         
         
@@ -132,6 +138,7 @@ namespace DiffPlex.Model
         
         public int EndY { get; set; }
 
+        
         
         
         
