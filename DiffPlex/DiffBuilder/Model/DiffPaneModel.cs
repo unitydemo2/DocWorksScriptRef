@@ -4,12 +4,15 @@ namespace DiffPlex.DiffBuilder.Model
 {
     
     
+    
     public class DiffPaneModel
     {
         
         
+        
         public List<DiffPiece> Lines { get; }
 
+        
         
         
         public DiffPaneModel()
