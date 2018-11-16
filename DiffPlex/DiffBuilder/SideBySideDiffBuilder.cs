@@ -159,12 +159,14 @@ namespace DiffPlex.DiffBuilder
     
     
     
+    
     public class SideBySideDiffBuilder : ISideBySideDiffBuilder
     {
         private readonly IDiffer differ;
 
         private delegate void PieceBuilder(string oldText, string newText, List<DiffPiece> oldPieces, List<DiffPiece> newPieces);
 
+        
         
         
         
@@ -475,11 +477,13 @@ namespace DiffPlex.DiffBuilder
         
         
         
+        
         public SideBySideDiffBuilder(IDiffer differ)
         {
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
+        
         
         
         
