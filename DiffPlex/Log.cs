@@ -1193,6 +1193,7 @@ namespace DiffPlex
         
         
         
+        
         public delegate void CalculateSquare(double number);
     }
 }
