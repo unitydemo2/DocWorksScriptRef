@@ -1731,8 +1731,10 @@ namespace DiffPlex.DiffBuilder.Model
   
   
   
+  
   public class DiffPiece
   {
+    
     
     
     
@@ -2222,7 +2224,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public int? Position { get; set; }
+    
     
     
     
@@ -2712,7 +2716,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public List<DiffPiece> SubPieces { get; set; } = new List<DiffPiece>();
+    
     
     
     
@@ -3202,7 +3208,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public string Conflict { get; set; }
+    
     
     
     
@@ -3693,6 +3701,7 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public DiffPiece(string text, ChangeType type, int? position = null)
     {
       Text = text;
@@ -3703,6 +3712,7 @@ namespace DiffPlex.DiffBuilder.Model
       BorderStyle = null;
     }
 
+    
     
     
     
