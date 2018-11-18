@@ -281,8 +281,10 @@ namespace DiffPlex.Model
     
     
     
+    
     public class ModificationData
     {
+        
         
         
         
@@ -847,8 +849,10 @@ namespace DiffPlex.Model
         
         
         
+        
         public string RawData { get; }
 
+        
         
         
         
@@ -1413,8 +1417,10 @@ namespace DiffPlex.Model
         
         
         
+        
         public string[] Pieces { get; set; }
 
+        
         
         
         
