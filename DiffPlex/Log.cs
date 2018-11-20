@@ -1656,6 +1656,7 @@ namespace DiffPlex
         
         
         
+        
         public delegate int TestDelegate(string s);
 
         
