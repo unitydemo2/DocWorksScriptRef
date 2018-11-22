@@ -762,10 +762,12 @@ namespace DiffPlex.DiffBuilder
     
     
     
+    
     public class InlineDiffBuilder : IInlineDiffBuilder
     {
         private readonly IDiffer differ;
 
+        
         
         
         
@@ -1528,6 +1530,7 @@ namespace DiffPlex.DiffBuilder
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
+        
         
         
         
