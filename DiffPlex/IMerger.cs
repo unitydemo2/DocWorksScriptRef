@@ -397,6 +397,7 @@ namespace DiffPlex
     
     
     
+    
     public interface IMerger
     {
         
@@ -788,8 +789,10 @@ namespace DiffPlex
         
         
         
+        
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         
         
