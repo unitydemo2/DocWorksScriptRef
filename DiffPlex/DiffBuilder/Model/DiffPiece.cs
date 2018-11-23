@@ -838,8 +838,10 @@ namespace DiffPlex.DiffBuilder.Model
   
   
   
+  
   public enum ChangeType
   {
+    
     
     
     
@@ -2513,7 +2515,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     Deleted,
+    
     
     
     
@@ -4187,7 +4191,9 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     Imaginary,
+    
     
     
     
