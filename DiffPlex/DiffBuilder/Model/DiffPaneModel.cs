@@ -863,6 +863,7 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public class DiffPaneModel
     {
         
@@ -1726,8 +1727,10 @@ namespace DiffPlex.DiffBuilder.Model
         
         
         
+        
         public List<DiffPiece> Lines { get; }
 
+        
         
         
         
