@@ -448,8 +448,10 @@ namespace DiffPlex.Model
     
     
     
+    
     public enum Edit
     {
+        
         
         
         
@@ -1347,7 +1349,9 @@ namespace DiffPlex.Model
         
         
         
+        
         DeleteRight,
+        
         
         
         
@@ -2245,7 +2249,9 @@ namespace DiffPlex.Model
         
         
         
+        
         InsertDown,
+        
         
         
         
