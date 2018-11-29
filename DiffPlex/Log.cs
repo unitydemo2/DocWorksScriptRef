@@ -515,8 +515,10 @@ namespace DiffPlex
     
     
     
+    
     public static class Log
     {
+        
         
         
         
@@ -1549,13 +1551,13 @@ namespace DiffPlex
         
         
         
+        
         [Conditional("LOG")]
         public static void Write(string format, params object[] args)
         {
             // not implemented
         }
 
-        
         
         
         
