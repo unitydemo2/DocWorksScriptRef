@@ -560,8 +560,10 @@ namespace DiffPlex
     
     
     
+    
     public static class Log
     {
+        
         
         
         
@@ -1126,6 +1128,7 @@ namespace DiffPlex
             Debug.WriteLine(string.Format(format, args));
         }
 
+        
         
         
         
