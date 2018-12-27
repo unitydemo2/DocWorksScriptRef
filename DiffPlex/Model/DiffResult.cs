@@ -17,11 +17,34 @@ namespace DiffPlex.Model
         /// </summary>
         public string[] PiecesNew { get; }
 
+        protected int ProtectedProperty { get; set; }
+
+        public static int StaticProperty { get; set; }
+
+        protected void MethodA()
+        {
+
+        }
+
+        private void MethodB()
+        {
+
+        }
+
+        public static bool operator !=(DiffResult a, DiffResult b)
+        {
+            return true;
+        }
+
+        public static bool operator ==(DiffResult a, DiffResult b)
+        {
+            return false;
+        }
 
         /// <summary>
         /// A collection of DiffBlocks which details deletions and insertions
         /// </summary>
-        public IList<DiffBlock> DiffBlocks { get; }
+        public IList<DiffBlock> DiffBlocks { get; set; }
 
         public DiffResult(string[] peicesOld, string[] piecesNew, IList<DiffBlock> blocks)
         {
