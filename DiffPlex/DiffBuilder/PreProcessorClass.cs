@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DiffPlex.DiffBuilder
 {
-#if MacOX
+#if MacOx
     public class PreProcessorClass
     {
         public void MethodForMacintosh()
