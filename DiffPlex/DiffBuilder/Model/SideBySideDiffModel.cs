@@ -1,7 +1,7 @@
 ﻿namespace DiffPlex.DiffBuilder.Model
 {
     /// <summary>
-    /// A model which represents differences between to texts to be shown side by side MUKHERJEE 281220182231
+    /// A model which represents differences between to texts to be shown side by side SIRSENDU MUKHERJEE 281220182252
     /// </summary>
     public class SideBySideDiffModel
     {
