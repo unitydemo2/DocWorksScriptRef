@@ -7,7 +7,7 @@ using DiffPlex.DiffBuilder.Model;
 namespace DiffPlex
 {
     /// <summary>
-    /// this is the class for meging 2 texts
+    /// this is the class for meging 2 texts -- MUKHERJEE SIRSENDU 311220181606
     /// </summary>
     /// <description>
     /// merging left and right texts and getting output as merged text
