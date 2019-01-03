@@ -10,7 +10,9 @@ namespace DiffPlex.DiffBuilder.Model
         Imaginary,
         Modified
     }
-
+///<summary>
+///summary created from source controller
+///</summary>
     public class DiffPiece
     {
         public ChangeType Type { get; set; }
