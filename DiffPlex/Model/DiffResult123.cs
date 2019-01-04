@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace DiffPlex.Model
 {
     /// <summary>
-    /// The result of diffing two peices of text
+    /// SIRSENDU TEST 1826 --- The result of diffing two peices of text
     /// </summary>
     public class DiffResult123
     {
