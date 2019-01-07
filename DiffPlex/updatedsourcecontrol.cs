@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace sirisha
 {
-    public static class Log
+    public static class updatedsourcecontrol
     {
         [Conditional("LOG")]
         public static void WriteLine(string format, params object[] args)
