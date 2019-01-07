@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace sirisha
+namespace DiffPlex
 {
     public static class updatedsourcecontrol
     {
