@@ -3,7 +3,7 @@
     /// <summary>
     /// A block of consecutive edits from A and/or B
     /// </summary>
-    public class DiffBlock : DiffResult
+    public class DiffBlockUpdated : DiffResult
     {
         /// <summary>
         /// Position where deletions in A begin
