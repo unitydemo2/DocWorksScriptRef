@@ -11,9 +11,9 @@ namespace DiffPlex
         }
 
         [Conditional("LOG")]
-        public static void Write(string format, params object[] args)
+        public static string Write(string format, params object[] args)
         {
-            // not implemented
+            // not implemented update content in script ref project
         }
 
         public delegate int TestDelegate(string s);
