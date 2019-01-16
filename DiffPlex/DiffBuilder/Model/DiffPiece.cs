@@ -18,29 +18,39 @@ namespace DiffPlex.DiffBuilder.Model
     }
 
     
+    
     public class DiffPiece
     {
         
+        
         public ChangeType Type { get; set; }
+        
         
         public int? Position { get; set; }
         
+        
         public string Text { get; set; }
+        
         
         public List<DiffPiece> SubPieces { get; set; } = new List<DiffPiece>();
         
+        
         public string Group { get; set; }
         
+        
         public string Conflict { get; set; }
+        
         
         public string BorderStyle { get; set; }
 
 #if Win64
         
+
 public string PropertyForWindows { get; set; }
 #endif
 
         
+
 public DiffPiece(string text, ChangeType type, int? position = null)
         {
             Text = text;
@@ -51,6 +61,7 @@ public DiffPiece(string text, ChangeType type, int? position = null)
             BorderStyle = null;
         }
 
+        
         
         public DiffPiece()
             : this(null, ChangeType.Imaginary)
