@@ -14,16 +14,19 @@ namespace DiffPlex
     /// </description>
     public class Merger : IMerger
     {
-        /// <summary>
-        /// enumerator for Merger
-        /// </summary>
-        /// <description>
-        /// this is the enumerator for example
-        /// </description>
-        public enum MergerEnum
+        ///     <summary>
+        ///     enumerator for Merger
+        ///     </summary>
+        ///     <description>
+        ///     this is the enumerator for example
+        ///     </description>
+                public enum MergerEnum
         {
+            
             LeftText,
+            
             RightText,
+            
             MergedText
         }
  
@@ -67,7 +70,7 @@ namespace DiffPlex
         /// </description>
         public long Property2 { get; set; }
 
-        /// <summary>
+        /// &lt;summary&gt;
         /// this method is for merging 2 texts
         /// </summary>
         /// <description>
@@ -77,7 +80,7 @@ namespace DiffPlex
         /// this is something
         /// </something>
         /// <param name="model">
-        /// <summary>
+        /// &lt;summary&gt;
         /// this method is for merging 2 texts
         /// </summary>
         /// <description>
@@ -87,9 +90,9 @@ namespace DiffPlex
         /// <param name="model2">this is description for model2</param>
         /// <returns>SideBySideDiffModel</returns>
         /// <completionlist cref="ConsoleKey.BrowserSearch"/>
-        /// <example></example>
+        /// &lt;example&gt;</example>
         /// <include file='IMerger.cs' path='[@name="asd"]'/>
-        /// <permission cref="CLSCompliantAttribute.IsCompliant"></permission>
+        /// &lt;permission cref=&quot;CLSCompliantAttribute.IsCompliant&quot;&gt;</permission>
         /// <remarks></remarks>
         /// <see cref="decimal"/>
         /// <seealso cref="InvalidTimeZoneException.InvalidTimeZoneException()"/>
