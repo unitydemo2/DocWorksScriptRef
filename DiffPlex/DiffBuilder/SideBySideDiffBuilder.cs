@@ -6,6 +6,11 @@ using DiffPlex.Model;
 namespace DiffPlex.DiffBuilder
 {
     
+    /// <summary>
+    /// [5c4557e795e945253838306e](NewTesting2_5c4557e795e945253838306e.cs)
+    /// </summary>
+    /// <description>
+    /// </description>
     public class SideBySideDiffBuilder : ISideBySideDiffBuilder
     {
         private readonly IDiffer differ;
@@ -13,15 +18,27 @@ namespace DiffPlex.DiffBuilder
         private delegate void PieceBuilder(string oldText, string newText, List<DiffPiece> oldPieces, List<DiffPiece> newPieces);
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public static readonly char[] WordSeparaters = {' ', '\t', '.', '(', ')', '{', '}', ',', '!'};
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public SideBySideDiffBuilder(IDiffer differ)
         {
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public SideBySideDiffModel BuildDiffModel(string oldText, string newText)
         {
             return BuildLineDiff(
