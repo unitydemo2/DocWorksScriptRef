@@ -24,11 +24,7 @@ namespace DiffPlex
         /// this method is to find diffs in 2 texts
         /// </summary>
         /// <param name="oldText">this param is for existing text</param>
-        /// <param name="newText">
-        /// <summary>
-        /// this param is for updated text
-        /// </summary>
-        /// </param>
+        /// <param name="newText">this param is for updated text</param>
         /// <param name="ignoreWhitespace"></param>
         /// <param name="ignoreCase"></param>
         /// <returns>
