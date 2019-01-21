@@ -7,11 +7,12 @@ namespace DiffPlex.DiffBuilder
 {
     
     /// <summary>
-    /// [5c4557e795e945253838306e](NewTesting2_5c4557e795e945253838306e.cs)
-    /// </summary>
-    /// <description>
-    /// </description>
-    public class SideBySideDiffBuilder : ISideBySideDiffBuilder
+        /// [5c4557e795e945253838306e](NewTesting2_5c4557e795e945253838306e.cs)
+        /// </summary>
+        /// <description>
+        /// [5c4557e795e945253838306e](NewTesting2_5c4557e795e945253838306e.cs)
+        /// </description>
+            public class SideBySideDiffBuilder : ISideBySideDiffBuilder
     {
         private readonly IDiffer differ;
 
@@ -19,27 +20,27 @@ namespace DiffPlex.DiffBuilder
 
         
         /// <summary>
-        /// </summary>
-        /// <description>
-        /// </description>
-        public static readonly char[] WordSeparaters = {' ', '\t', '.', '(', ')', '{', '}', ',', '!'};
+                /// </summary>
+                /// <description>
+                /// </description>
+                        public static readonly char[] WordSeparaters = {' ', '\t', '.', '(', ')', '{', '}', ',', '!'};
 
         
         /// <summary>
-        /// </summary>
-        /// <description>
-        /// </description>
-        public SideBySideDiffBuilder(IDiffer differ)
+                /// </summary>
+                /// <description>
+                /// </description>
+                        public SideBySideDiffBuilder(IDiffer differ)
         {
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
         
         /// <summary>
-        /// </summary>
-        /// <description>
-        /// </description>
-        public SideBySideDiffModel BuildDiffModel(string oldText, string newText)
+                /// </summary>
+                /// <description>
+                /// </description>
+                        public SideBySideDiffModel BuildDiffModel(string oldText, string newText)
         {
             return BuildLineDiff(
                 oldText ?? throw new ArgumentNullException(nameof(oldText)),
