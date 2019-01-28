@@ -11,7 +11,7 @@ namespace DiffPlex
         private static readonly string[] emptyStringArray = new string[0];
 
         ///     <summary>
-                ///     this is the property for 
+                ///     this is the property for ![Enfield](sanity28/Images/Enfiled_5c383c58ed64cc1190cbf89c.jpg)
                 ///     </summary>
                         [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
