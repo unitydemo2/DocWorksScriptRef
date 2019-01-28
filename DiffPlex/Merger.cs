@@ -15,7 +15,7 @@ namespace DiffPlex
             public class Merger : IMerger
     {
         ///     <summary>
-                ///     enumerator for Merger
+                ///     enumerator for Merger this is the property for ![Enfield](sanity28/Images/Enfiled_5c383c58ed64cc1190cbf89c.jpg)
                 ///     </summary>
                 ///     <description>
                 ///     this is the enumerator for example
