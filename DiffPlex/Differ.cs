@@ -1,9 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using DiffPlex.Model;
 
 namespace DiffPlex
 {
+    /// <summary>
+    /// </summary>
+    /// <description>
+    /// </description>
     [Obsolete]
     public class Differ : IDiffer
     {
@@ -15,6 +19,10 @@ namespace DiffPlex
         [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
@@ -40,11 +48,19 @@ namespace DiffPlex
             return CreateCustomDiffs(oldText, newText, ignoreWhitespace, ignoreCase, str => str.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None));
         }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -64,11 +80,19 @@ namespace DiffPlex
                     });
         }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -160,16 +184,25 @@ namespace DiffPlex
         }
 
         /// <summary>
-        /// Finds the middle snake and the minimum length of the edit script comparing string A and B
-        /// </summary>
-        /// <param name="A"></param>
-        /// <param name="startA">Lower bound inclusive</param>
-        /// <param name="endA">Upper bound exclusive</param>
-        /// <param name="B"></param>
-        /// <param name="startB">lower bound inclusive</param>
-        /// <param name="endB">upper bound exclusive</param>
-        /// <returns></returns>
-        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+                /// </summary>
+                /// <description>
+                /// </description>
+                /// <param name="startA">
+                /// Lower bound inclusive
+                /// </param>
+                /// <param name="endA">
+                /// Upper bound exclusive
+                /// </param>
+                /// <param name="startB">
+                /// lower bound inclusive
+                /// </param>
+                /// <param name="endB">
+                /// upper bound exclusive
+                /// </param>
+                /// <return>
+                /// </return>
+                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -317,6 +350,10 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         protected static void BuildModificationData(ModificationData A, ModificationData B)
         {
             int N = A.HashedPieces.Length;
