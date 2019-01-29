@@ -1,11 +1,9 @@
 using System;
-using System.Collections.Generic;
-using DiffPlex.Model;
 
 namespace DiffPlex
 {
     [Obsolete]
-    public class Differ : IDiffer
+    public class Alok
     {
         private static readonly string[] emptyStringArray = new string[0];
         /// <summary>
@@ -14,9 +12,12 @@ namespace DiffPlex
         [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
-        public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
+        public string CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
-            return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
+            if (oldText.Equals(newText))
+                return "strings are equal";
+            else
+                return "not equal";
         }
 
         /// <summary>
@@ -32,16 +33,16 @@ namespace DiffPlex
         /// </summary>
         /// </returns>
         [Obsolete]
-        public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
+        public bool CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
             if (newText == null) throw new ArgumentNullException(nameof(newText));
-            return CreateCustomDiffs(oldText, newText, ignoreWhitespace, ignoreCase, str => str.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None));
+            return oldText.Length > newText.Length;
         }
 
-        public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
+        public string CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
-            return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
+            return "Test Output";
         }
     }
   }
