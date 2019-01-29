@@ -27,11 +27,6 @@ namespace DiffPlex
         /// <param name="newText">this param is for updated text</param>
         /// <param name="ignoreWhitespace"></param>
         /// <param name="ignoreCase"></param>
-        /// <returns>
-        /// <summary>
-        /// this method returns result of both text
-        /// </summary>
-        /// </returns>
         [Obsolete]
         public bool CompareStringLength(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
