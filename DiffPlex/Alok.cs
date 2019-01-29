@@ -43,4 +43,5 @@ namespace DiffPlex
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
-       }
+    }
+  }
