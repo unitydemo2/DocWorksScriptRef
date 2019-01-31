@@ -3,7 +3,7 @@
 namespace DiffPlex.Model
 {
     /// <summary>
-    /// The result of diffing two peices of text
+    /// The result of diffing two peices of text -- Edited By SIRSENDU 31 JAN 2019
     /// </summary>
     public class DiffResult
     {
