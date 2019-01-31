@@ -3,7 +3,7 @@
 namespace DiffPlex.DiffBuilder
 {
     /// <summary>
-    /// Provides methods that generate differences between texts for displaying in a side by side view.
+    /// DELETED FOR TEST -- SIRSENDU
     /// </summary>
     public interface ISideBySideDiffBuilder
     {
