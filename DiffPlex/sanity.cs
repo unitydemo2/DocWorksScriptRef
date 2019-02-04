@@ -3,6 +3,16 @@ using System.Diagnostics;
 namespace DiffPlex
 {
     
+        ///     <summary>
+                ///    #include <stdio.h>
+int main()
+{
+   // printf() displays the string inside quotation
+   printf("Hello type of content ");
+   return 0;
+}
+                ///     </summary
+    
     public static class sanity
     {
         
@@ -17,7 +27,8 @@ namespace DiffPlex
         public static void Write(string format, params object[] args)
         {
             // not implemented
-        }
+            
+               }
 
         
         
