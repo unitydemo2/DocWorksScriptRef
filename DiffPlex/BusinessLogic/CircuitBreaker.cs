@@ -1,10 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DiffPlex.BusinessLogic
 {
-    class CircuitBreaker
+    public class CircuitBreaker : ICircuitBreaker
     {
+        public bool IsBroken()
+        {
+            return true;
+        }
     }
 }
