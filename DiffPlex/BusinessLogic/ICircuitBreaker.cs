@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DiffPlex.BusinessLogic
 {
-    class ICircuitBreaker
+    public interface ICircuitBreaker
     {
+        bool IsBroken();
     }
 }
