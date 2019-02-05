@@ -4,8 +4,10 @@ using System.Text;
 
 namespace DiffPlex.BusinessLogic
 {
+    
     public class CircuitBreaker : ICircuitBreaker
     {
+        
         public bool IsBroken()
         {
             return true;
