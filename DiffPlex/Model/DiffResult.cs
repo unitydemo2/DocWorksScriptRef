@@ -1,26 +1,44 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace DiffPlex.Model
 {
     /// <summary>
-    /// The result of diffing two peices of text
-    /// </summary>
-    public class DiffResult
+        /// The result of diffing two peices of text
+        /// </summary>
+        /// <description>
+        /// </description>
+            public class DiffResult
     {
         /// <summary>
-        /// The chunked peices of the old text
-        /// </summary>
-        public string[] PiecesOld { get; }
+                /// The chunked peices of the old text
+                /// </summary>
+                /// <description>
+                /// </description>
+                        public string[] PiecesOld { get; }
 
         /// <summary>
-        /// The chunked peices of the new text
-        /// </summary>
-        public string[] PiecesNew { get; }
+                /// The chunked peices of the new text
+                /// </summary>
+                /// <description>
+                /// </description>
+                        public string[] PiecesNew { get; }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         protected int ProtectedProperty { get; set; }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public static int StaticProperty { get; set; }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         protected void MethodA()
         {
 
@@ -31,20 +49,30 @@ namespace DiffPlex.Model
 
         }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public static bool operator !=(DiffResult a, DiffResult b)
         {
             return true;
         }
 
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public static bool operator ==(DiffResult a, DiffResult b)
         {
             return false;
         }
 
         /// <summary>
-        /// A collection of DiffBlocks which details deletions and insertions
-        /// </summary>
-        public IList<DiffBlock> DiffBlocks { get; set; }
+                /// A collection of DiffBlocks which details deletions and insertions
+                /// </summary>
+                /// <description>
+                /// </description>
+                        public IList<DiffBlock> DiffBlocks { get; set; }
 
         public DiffResult(string[] peicesOld, string[] piecesNew, IList<DiffBlock> blocks)
         {
