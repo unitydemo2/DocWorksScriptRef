@@ -1,19 +1,22 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using DiffPlex.DiffBuilder.Model;
 using DiffPlex.Model;
 
 namespace DiffPlex.DiffBuilder
 {
+    
     public class InlineDiffBuilder : IInlineDiffBuilder
     {
         private readonly IDiffer differ;
 
+        
         public InlineDiffBuilder(IDiffer differ)
         {
             this.differ = differ ?? throw new ArgumentNullException(nameof(differ));
         }
 
+        
         public DiffPaneModel BuildDiffModel(string oldText, string newText)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
