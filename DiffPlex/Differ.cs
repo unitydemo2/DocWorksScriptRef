@@ -5,25 +5,40 @@ using DiffPlex.Model;
 namespace DiffPlex
 {
     
+    /// <summary>
+    /// </summary>
+    /// <description>
+    /// </description>
     [Obsolete]
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
-        ///     <summary>
-                ///     this is the property for 
-                ///     </summary>
-                        [Obsolete]
+        /// <summary>
+                                /// this is the property for
+                                /// </summary>
+                                /// <description>
+                                /// </description>
+                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
-        /// <!-- Badly formed XML comment ignored for member "M:DiffPlex.Differ.CreateLineDiffs(System.String,System.String,System.Boolean,System.Boolean)" -->
-                        [Obsolete]
+        /// <summary>
+                                /// </summary>
+                                /// <description>
+                                /// </description>
+                                /// <#comment>
+                                /// </#comment>
+                                                        [Obsolete]
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -32,12 +47,20 @@ namespace DiffPlex
         }
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -58,12 +81,20 @@ namespace DiffPlex
         }
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -156,17 +187,26 @@ namespace DiffPlex
             return list.ToArray();
         }
 
-        ///     <summary>
-                ///     Finds the middle snake and the minimum length of the edit script comparing string A and B
-                ///     </summary>
-                ///     <param name="A"></param>
-                ///     <param name="startA">Lower bound inclusive</param>
-                ///     <param name="endA">Upper bound exclusive</param>
-                ///     <param name="B"></param>
-                ///     <param name="startB">lower bound inclusive</param>
-                ///     <param name="endB">upper bound exclusive</param>
-                ///     <returns></returns>
-                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+        /// <summary>
+                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+                                /// </summary>
+                                /// <description>
+                                /// </description>
+                                /// <return>
+                                /// </return>
+                                /// <param name="startA">
+                                /// Lower bound inclusive
+                                /// </param>
+                                /// <param name="endA">
+                                /// Upper bound exclusive
+                                /// </param>
+                                /// <param name="startB">
+                                /// lower bound inclusive
+                                /// </param>
+                                /// <param name="endB">
+                                /// upper bound exclusive
+                                /// </param>
+                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -315,6 +355,10 @@ namespace DiffPlex
         }
 
         
+        /// <summary>
+        /// </summary>
+        /// <description>
+        /// </description>
         protected static void BuildModificationData(ModificationData A, ModificationData B)
         {
             int N = A.HashedPieces.Length;
