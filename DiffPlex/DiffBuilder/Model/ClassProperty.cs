@@ -3,8 +3,10 @@ namespace DiffPlex.DiffBuilder.Model
     
     
     
+    
     public class ClassProperty
     {
+        
         
         
         
@@ -13,8 +15,10 @@ namespace DiffPlex.DiffBuilder.Model
         
         
         
+        
         public int NumberB { get; set; }
 
+        
         
         
         
