@@ -15,17 +15,20 @@ namespace DiffPlex
                             public class Merger : IMerger
     {
         ///     <summary>
-                ///     enumerator for Merger
-                ///     </summary>
-                ///     <description>
-                ///     this is the enumerator for example
-                ///     </description>
-                        public enum MergerEnum
+                                ///     enumerator for Merger
+                                ///     </summary>
+                                ///     <description>
+                                ///     this is the enumerator for example
+                                ///     </description>
+                                                        public enum MergerEnum
         {
+            
             
             LeftText,
             
+            
             RightText,
+            
             
             MergedText
         }
