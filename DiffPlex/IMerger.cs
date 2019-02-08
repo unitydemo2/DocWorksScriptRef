@@ -9,11 +9,14 @@ using System.Text;
 namespace DiffPlex
 {
     
+    
     public interface IMerger
     {
         
+        
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         SideBySideDiffModel GetMergedText(SideBySideDiffModel model);
     }
