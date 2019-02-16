@@ -8,7 +8,10 @@ using System.Text;
 
 namespace DiffPlex
 {
-    
+    /// <summary>
+       ///   Content is updated only for testing pull is working fine or not for scriptref projects.
+    ///  </summary>
+
     public interface IMerger
     {
         
