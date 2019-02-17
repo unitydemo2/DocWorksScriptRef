@@ -6,25 +6,26 @@ namespace DiffPlex
 {
     
     /// <summary>
-    /// [5c5a8ee96efa175f94714490](CSharp Code_5c5a8ee96efa175f94714490.cs)
-    /// </summary>
-    /// <description>
-    /// ![abc](301805_5c67eb0ad2b38f3c4046756b.jpg)
-    /// </description>
-    [Obsolete]
+        /// [5c5a8ee96efa175f94714490](CSharp Code_5c5a8ee96efa175f94714490.cs)
+        /// </summary>
+        /// <description>
+        /// ![abc](301805_5c67eb0ad2b38f3c4046756b.jpg)
+        /// </description>
+            [Obsolete]
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
         /// <summary>
-                                /// this is the property for
-                                /// </summary>
-                                /// <description>
-                                /// []()
-                                /// </description>
-                                                        [Obsolete]
+                                                                /// this is the property for
+                                                                /// </summary>
+                                                                /// <description>
+                                                                /// []()
+                                                                /// </description>
+                                                                                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        
         
         
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
@@ -33,6 +34,7 @@ namespace DiffPlex
         }
 
         
+                                                        
                                                         [Obsolete]
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
@@ -43,11 +45,13 @@ namespace DiffPlex
 
         
         
+        
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
@@ -71,11 +75,13 @@ namespace DiffPlex
 
         
         
+        
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        
         
         
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators)
@@ -171,21 +177,21 @@ namespace DiffPlex
         }
 
         /// <summary>
-                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
-                                /// </summary>
-                                /// <param name="A">
-                                /// </param>
-                                /// <param name="startA">
-                                /// </param>
-                                /// <param name="endA">
-                                /// </param>
-                                /// <param name="B">
-                                /// </param>
-                                /// <param name="startB">
-                                /// </param>
-                                /// <param name="endB">
-                                /// </param>
-                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+                                                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+                                                                /// </summary>
+                                                                /// <param name="A">
+                                                                /// </param>
+                                                                /// <param name="startA">
+                                                                /// </param>
+                                                                /// <param name="endA">
+                                                                /// </param>
+                                                                /// <param name="B">
+                                                                /// </param>
+                                                                /// <param name="startB">
+                                                                /// </param>
+                                                                /// <param name="endB">
+                                                                /// </param>
+                                                                                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -333,6 +339,7 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        
         
         
         protected static void BuildModificationData(ModificationData A, ModificationData B)
