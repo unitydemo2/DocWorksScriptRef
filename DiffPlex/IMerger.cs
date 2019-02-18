@@ -9,7 +9,7 @@ using System.Text;
 namespace DiffPlex
 {
     /// <summary>
-       /// SIRSENDU TEST ---  Content is updated only for testing pull is working fine or not for scriptref projects.
+       /// SIRSENDU TEST ---  Content is updated only for testing pull is working fine or not for scriptref projects on 18th Feb 2018.
     ///  </summary>
 
     public interface IMerger
