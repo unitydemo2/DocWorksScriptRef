@@ -5,25 +5,60 @@ using DiffPlex.Model;
 namespace DiffPlex
 {
     
+    /// <summary>
+    /// This is created for testing push operation.
+    /// </summary>
+    /// <description>
+    /// ![](Fish_5c6b7a796cab41050402abae.jpeg)
+    /// </description>
     [Obsolete]
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
-        ///     <summary>
-                ///     this is the property for 
-                ///     </summary>
-                        [Obsolete]
+        /// <summary>
+                                /// this is the property for
+                                /// </summary>
+                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
         
+        /// <returns>
+        /// <DiffPlex>
+        /// <Model>
+        /// <DiffResult>
+        /// </DiffResult>
+        /// </Model>
+        /// </DiffPlex>
+        /// </returns>
+        /// <param name="oldText">
+        /// </param>
+        /// <param name="newText">
+        /// </param>
+        /// <param name="ignoreWhitespace">
+        /// </param>
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
-        /// <!-- Badly formed XML comment ignored for member "M:DiffPlex.Differ.CreateLineDiffs(System.String,System.String,System.Boolean,System.Boolean)" -->
-                        [Obsolete]
+        /// <returns>
+                                /// <DiffPlex>
+                                /// <Model>
+                                /// <DiffResult>
+                                /// </DiffResult>
+                                /// </Model>
+                                /// </DiffPlex>
+                                /// </returns>
+                                /// <param name="oldText">
+                                /// </param>
+                                /// <param name="newText">
+                                /// </param>
+                                /// <param name="ignoreWhitespace">
+                                /// </param>
+                                /// <param name="ignoreCase">
+                                /// </param>
+                                                        [Obsolete]
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -32,12 +67,42 @@ namespace DiffPlex
         }
 
         
+        /// <returns>
+        /// <DiffPlex>
+        /// <Model>
+        /// <DiffResult>
+        /// </DiffResult>
+        /// </Model>
+        /// </DiffPlex>
+        /// </returns>
+        /// <param name="oldText">
+        /// </param>
+        /// <param name="newText">
+        /// </param>
+        /// <param name="ignoreWhitespace">
+        /// </param>
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
         
+        /// <returns>
+        /// <DiffPlex>
+        /// <Model>
+        /// <DiffResult>
+        /// </DiffResult>
+        /// </Model>
+        /// </DiffPlex>
+        /// </returns>
+        /// <param name="oldText">
+        /// </param>
+        /// <param name="newText">
+        /// </param>
+        /// <param name="ignoreWhitespace">
+        /// </param>
+        /// <param name="ignoreCase">
+        /// </param>
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -58,12 +123,46 @@ namespace DiffPlex
         }
 
         
+        /// <returns>
+        /// <DiffPlex>
+        /// <Model>
+        /// <DiffResult>
+        /// </DiffResult>
+        /// </Model>
+        /// </DiffPlex>
+        /// </returns>
+        /// <param name="oldText">
+        /// </param>
+        /// <param name="newText">
+        /// </param>
+        /// <param name="ignoreWhitespace">
+        /// </param>
+        /// <param name="separators">
+        /// </param>
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
         
+        /// <returns>
+        /// <DiffPlex>
+        /// <Model>
+        /// <DiffResult>
+        /// </DiffResult>
+        /// </Model>
+        /// </DiffPlex>
+        /// </returns>
+        /// <param name="oldText">
+        /// </param>
+        /// <param name="newText">
+        /// </param>
+        /// <param name="ignoreWhitespace">
+        /// </param>
+        /// <param name="ignoreCase">
+        /// </param>
+        /// <param name="separators">
+        /// </param>
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -156,17 +255,30 @@ namespace DiffPlex
             return list.ToArray();
         }
 
-        ///     <summary>
-                ///     Finds the middle snake and the minimum length of the edit script comparing string A and B
-                ///     </summary>
-                ///     <param name="A"></param>
-                ///     <param name="startA">Lower bound inclusive</param>
-                ///     <param name="endA">Upper bound exclusive</param>
-                ///     <param name="B"></param>
-                ///     <param name="startB">lower bound inclusive</param>
-                ///     <param name="endB">upper bound exclusive</param>
-                ///     <returns></returns>
-                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+        /// <summary>
+                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+                                /// </summary>
+                                /// <returns>
+                                /// <DiffPlex>
+                                /// <Model>
+                                /// <EditLengthResult>
+                                /// </EditLengthResult>
+                                /// </Model>
+                                /// </DiffPlex>
+                                /// </returns>
+                                /// <param name="A">
+                                /// </param>
+                                /// <param name="startA">
+                                /// </param>
+                                /// <param name="endA">
+                                /// </param>
+                                /// <param name="B">
+                                /// </param>
+                                /// <param name="startB">
+                                /// </param>
+                                /// <param name="endB">
+                                /// </param>
+                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -315,6 +427,14 @@ namespace DiffPlex
         }
 
         
+        /// <returns>
+        /// <void>
+        /// </void>
+        /// </returns>
+        /// <param name="A">
+        /// </param>
+        /// <param name="B">
+        /// </param>
         protected static void BuildModificationData(ModificationData A, ModificationData B)
         {
             int N = A.HashedPieces.Length;
