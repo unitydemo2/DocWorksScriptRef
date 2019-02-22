@@ -16,6 +16,7 @@ namespace DiffPlex
                         [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        public delegate int TestDelegate(string s);
         
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
