@@ -8,7 +8,9 @@ using System.Text;
 
 namespace DiffPlex
 {
-    
+            ///     <summary>
+        ///     Test interface Named As class Against convention
+        ///     </summary>
     public interface PulledNode
     {
         
