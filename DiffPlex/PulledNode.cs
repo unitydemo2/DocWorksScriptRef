@@ -9,7 +9,7 @@ using System.Text;
 namespace DiffPlex
 {
         ///     <summary>
-        ///     TEST SUMMARY BY SIRSENDU 
+        ///     TEST SUMMARY BY SIRSENDU MUKHERJEE
         ///     </summary>
     public interface PulledNode
     {
