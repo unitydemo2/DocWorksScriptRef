@@ -8,7 +8,9 @@ using System.Text;
 
 namespace DiffPlex.DiffBuilder
 {
-    
+        ///     <summary>
+        ///     Test Class Named As Inetrface Against convention
+        ///     </summary>
     public class IPulledNode123
     {
         
