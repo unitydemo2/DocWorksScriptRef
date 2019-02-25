@@ -9,7 +9,7 @@ using System.Text;
 namespace DiffPlex
 {
     ///<summary>
-       /// Less than ‘&lt;’ , Greater than ‘&gt;’
+       /// Less than ‘&lt;’ , Greater than ‘&gt;’ edited for testing
     ///</summary>
     
     public interface IMerger
