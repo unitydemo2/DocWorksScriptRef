@@ -20,5 +20,10 @@ namespace DiffPlex.Model
         {
             RawData = str;
         }
+        
+        public delegate int TestDelegate1221(string s);
+
+        public delegate void CalculateSquare1221(double number);
+        
     }
 }
