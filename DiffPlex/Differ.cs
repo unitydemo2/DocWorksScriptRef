@@ -11,7 +11,7 @@ namespace DiffPlex
         private static readonly string[] emptyStringArray = new string[0];
 
         ///     <summary>
-                ///     this is the property for 
+                ///     this is the property for testing
                 ///     </summary>
                         [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
