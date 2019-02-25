@@ -19,5 +19,8 @@ namespace DiffPlex
 
         
         SideBySideDiffModel GetMergedText(SideBySideDiffModel model);
-    }
+    
+        public delegate int TestDelegate(string s);
+
+        public delegate void CalculateSquare12(double number);
 }
