@@ -23,5 +23,6 @@ namespace DiffPlex
         public delegate int TestDelegate(string s);
 
         public delegate void CalculateSquare12(double number);
-}
+    }
+
 }
