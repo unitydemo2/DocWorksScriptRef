@@ -3,16 +3,18 @@ using System;
 namespace DiffPlex
 {
     
+    
     [Obsolete]
     public class AloksTest
     {
         private static readonly string[] emptyStringArray = new string[0];
         ///     <summary>
-                ///     this is the property for 
-                ///     </summary>
-                        [Obsolete]
+                                ///     this is the property for 
+                                ///     </summary>
+                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        
         
         public string CompareString(string oldText, string newText, bool ignoreWhitespace)
         {
@@ -23,13 +25,13 @@ namespace DiffPlex
         }
 
         ///     <summary>
-                ///     this method is to find diffs in 2 texts
-                ///     </summary>
-                ///     <param name="oldText">this param is for existing text</param>
-                ///     <param name="newText">this param is for updated text</param>
-                ///     <param name="ignoreWhitespace"></param>
-                ///     <param name="ignoreCase"></param>
-                        [Obsolete]
+                                ///     this method is to find diffs in 2 texts
+                                ///     </summary>
+                                ///     <param name="oldText">this param is for existing text</param>
+                                ///     <param name="newText">this param is for updated text</param>
+                                ///     <param name="ignoreWhitespace"></param>
+                                ///     <param name="ignoreCase"></param>
+                                                        [Obsolete]
         public bool CompareStringLength(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -37,6 +39,7 @@ namespace DiffPlex
             return oldText.Length > newText.Length;
         }
 
+        
         
         public string CreateSomeOutput(string oldText, string newText, bool ignoreWhitespace)
         {
