@@ -4,7 +4,7 @@ using DiffPlex.Model;
 namespace DiffPlex
 {
     ///     <summary>
-        ///     Provides methods for generate differences between texts ![abc](im7.jpg)
+        ///     Provides methods for generate differences between texts ![abc](QAImages/RoseBlue.jpg)
         ///     </summary>
             public interface IDiffer
     {
