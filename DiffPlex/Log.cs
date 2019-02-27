@@ -19,6 +19,7 @@ namespace DiffPlex
             // not implemented
         }
 
+        
         public delegate int TestDelegate(string s);
 
         public delegate void CalculateSquare(double number);
