@@ -15,6 +15,9 @@ namespace DiffPlex.Model
         
         public string[] Pieces { get; set; }
 
+        public delegate int TestDelegate1221(string s);
+
+        public delegate void CalculateSquare1221(double number);
         
         public ModificationData(string str)
         {
