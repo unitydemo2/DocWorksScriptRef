@@ -3,20 +3,21 @@ using System.Collections.Generic;
 namespace DiffPlex.Model
 {
     ///         <summary>
-                                ///         The result of diffing two peices of text -- Image Added By Sirsendu ![abc](Bird.jpg)
-                                ///         </summary>
-                                                            public class DiffResult
+                                                                ///         The result of diffing two peices of text -- Image Added By Sirsendu ![abc](Bird.jpg)
+                                                                ///         </summary>
+                                                                                                                            public class DiffResult
     {
         ///         <summary>
-                                                                ///         The chunked peices of the old text
-                                                                ///         </summary>
-                                                                                                                        public string[] PiecesOld { get; }
+                                                                                                                                ///         The chunked peices of the old text
+                                                                                                                                ///         </summary>
+                                                                                                                                                                                                                                                        public string[] PiecesOld { get; }
 
         ///         <summary>
-                                                                ///         The chunked peices of the new text
-                                                                ///         </summary>
-                                                                                                                        public string[] PiecesNew { get; }
+                                                                                                                                ///         The chunked peices of the new text
+                                                                                                                                ///         </summary>
+                                                                                                                                                                                                                                                        public string[] PiecesNew { get; }
 
+        
         
         
         
@@ -25,8 +26,10 @@ namespace DiffPlex.Model
         
         
         
+        
         public static int StaticProperty { get; set; }
 
+        
         
         
         
@@ -43,11 +46,13 @@ namespace DiffPlex.Model
         
         
         
+        
         public static bool operator !=(DiffResult a, DiffResult b)
         {
             return true;
         }
 
+        
         
         
         
@@ -57,10 +62,11 @@ namespace DiffPlex.Model
         }
 
         ///         <summary>
-                                                                ///         A collection of DiffBlocks which details deletions and insertions
-                                                                ///         </summary>
-                                                                                                                        public IList<DiffBlock> DiffBlocks { get; set; }
+                                                                                                                                ///         A collection of DiffBlocks which details deletions and insertions
+                                                                                                                                ///         </summary>
+                                                                                                                                                                                                                                                        public IList<DiffBlock> DiffBlocks { get; set; }
 
+        
         
         
         
