@@ -47,7 +47,7 @@ namespace DiffPlex
                         public int FieldExample1;
 
         ///     <summary>
-                ///     FieldExample2 Testing pull operations in github ![abc](image123/Images/mouse1.jpg)
+                ///     FieldExample2 Testing pull operations in github ![abc](Images/mouse1.jpg)
                 ///     </summary>
                 ///     <description>
                 ///     This is for generating Field example 2
