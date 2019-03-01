@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace DiffPlex
@@ -22,6 +22,7 @@ namespace DiffPlex
             return new List<string>() { "1", "2", "3" };
         }
 
+        
         public delegate int TestDelegate(string s);
 
         public delegate void CalculateSquare(double number);
