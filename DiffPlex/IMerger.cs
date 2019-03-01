@@ -8,7 +8,9 @@ using System.Text;
 
 namespace DiffPlex
 {
-    
+     ///     <summary>
+     ///     Summary for IMerger interface By Sirsendu
+    ///     </summary>
     public interface IMerger
     {
         
