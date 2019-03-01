@@ -8,14 +8,16 @@ using System.Text;
 
 namespace DiffPlex
 {
-     ///     <summary>
-     ///     Image Test in github ![abc](mouse1.jpg)
-     ///     </summary>
-    public interface IMerger
+     ///         <summary>
+         ///         Image Test in github ![abc](mouse1.jpg)
+         ///         </summary>
+             public interface IMerger
     {
+        
         
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         SideBySideDiffModel GetMergedText(SideBySideDiffModel model);
     }
