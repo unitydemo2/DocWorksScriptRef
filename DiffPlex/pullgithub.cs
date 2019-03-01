@@ -55,7 +55,7 @@ namespace DiffPlex
                         public string FieldExample2;
 
         ///     <summary>
-                ///     Property 1 Testing pull operations in github ![abc](image123/Examples/adding_5c750355bf9f0a0194bb92fc.cs)
+                ///     Property 1 Testing pull operations in  ![abc](image123/Examples/adding_5c750355bf9f0a0194bb92fc.cs)
                 ///     </summary>
                 ///     <description>
                 ///     This is for generating Property 1
