@@ -9,7 +9,7 @@ using System.Text;
 namespace DiffPlex
 {
      ///     <summary>
-     ///     Image Test in github ![abc](image123/Images/mouse1.jpg)
+     ///     Image Test in github ![abc](Images/mouse1.jpg)
      ///     </summary>
     public interface IMerger
     {
