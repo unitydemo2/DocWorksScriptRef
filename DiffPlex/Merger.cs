@@ -57,6 +57,7 @@ namespace DiffPlex
 
         ///     <summary>
                 ///     Property 1
+                ///![abc](Eyes.jpg)
                 ///     </summary>
                 ///     <description>
                 ///     This is for generating Property 1
@@ -71,7 +72,7 @@ namespace DiffPlex
                 ///     </description>
                         public long Property2 { get; set; }
 
-        /// <!-- Badly formed XML comment ignored for member "M:DiffPlex.Merger.GetMergedText(DiffPlex.DiffBuilder.Model.SideBySideDiffModel,System.String)" -->
+        
                         public static SideBySideDiffModel GetMergedText(SideBySideDiffModel model, string model2)
         {
             DiffPaneModel mergedText = new DiffPaneModel();
