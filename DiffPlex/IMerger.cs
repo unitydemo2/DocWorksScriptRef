@@ -9,22 +9,22 @@ using System.Text;
 namespace DiffPlex
 {
     
-    /// <description>
-                /// ```
-                ///  Class ABC {
-                ///  Int b;
-                ///  Int a;
-                ///  }
-                /// ```
-                /// </description>
-                            public interface IMerger
+    /// <summary>
+                                /// Details
+                                /// </summary>
+                                /// <description>
+                                /// `<br/> Class ABC {<br/> Int b;<br/> Int a;<br/> }<br/>`
+                                /// </description>
+                                                            public interface IMerger
     {
+        
         
         
         
         
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         
         
