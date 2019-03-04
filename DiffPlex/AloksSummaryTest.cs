@@ -31,6 +31,7 @@ namespace DiffPlex
 
         ///         <summary>
                                                                                                                                 ///         this method is to find diffs in 2 texts
+        ///         ![Tiger eyes image](Eyes.jpg)
                                                                                                                                 ///         </summary>
                                                                                                                                 ///         <param name="oldText">this param is for existing text</param>
                                                                                                                                 ///         <param name="newText">this param is for updated text</param>
