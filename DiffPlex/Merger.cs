@@ -8,6 +8,7 @@ namespace DiffPlex
 {
     ///     <summary>
         ///     this is the class for meging 2 texts
+    ///![abc](Eyes.jpg)
         ///     </summary>
         ///     <description>
         ///     merging left and right texts and getting output as merged text
