@@ -10,9 +10,10 @@ namespace DiffPlex
     {
         private static readonly string[] emptyStringArray = new string[0];
         ///     <summary>
-                                                                ///     this is the property for 
-                                                                ///     </summary>
-                                                                                                                        [Obsolete]
+        ///     this is the property for 
+        ///     ![Enfield image](Enfiled.jpg)
+        ///     </summary>
+        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
         
