@@ -8,16 +8,18 @@ using System.Text;
 
 namespace DiffPlex
 {
-    /// <summary>
-    ///  This is created for tetsing the summary.
-    ///![Broken](test23.jpg)
-    /// Added for testing.
-    ///</summary>
-    public interface IMerger
+    ///      <summary>
+        ///       This is created for tetsing the summary.
+        ///     ![Broken](test23.jpg)
+        ///      Added for testing.
+        ///     </summary>
+            public interface IMerger
     {
+        
         
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         SideBySideDiffModel GetMergedText(SideBySideDiffModel model);
     }
