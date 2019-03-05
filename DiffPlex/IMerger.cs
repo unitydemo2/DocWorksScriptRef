@@ -11,8 +11,8 @@ namespace DiffPlex
     ///          <summary>
                 ///           This is created for tetsing the summary.
                 ///         ![Broken](test23.jpg)
-                ///        ![codetest](CreateProject.txt)
-                ///          Added for testing.
+                ///        ![codetesting](drafthistory.txt)
+                ///          Added for testing pull.
                 ///         </summary>
                             public interface IMerger
     {
