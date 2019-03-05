@@ -1,6 +1,7 @@
 namespace DiffPlex.Model
 {
         /// <summary>
+        /// this is recent pull on 5th march ![abc](QAImages/mouse1.jpg)
         ///  This is created for testing the summary.
         ///</summary>
         ///<description>
