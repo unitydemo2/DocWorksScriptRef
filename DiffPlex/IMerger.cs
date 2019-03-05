@@ -8,7 +8,11 @@ using System.Text;
 
 namespace DiffPlex
 {
-    
+    /// <summary>
+    ///  This is created for tetsing the summary.
+    ///![Broken](test23.jpg)
+    /// Added for testing.
+    ///</summary>
     public interface IMerger
     {
         
