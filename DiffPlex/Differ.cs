@@ -6,22 +6,23 @@ namespace DiffPlex
 {
     
     /// <summary>
-                                                                /// Test Summary New 2
-                                                                /// </summary>
-                                                                /// <description>
-                                                                /// [5c78f7550591891ee8a5131a](Code block with generics_5c78f7550591891ee8a5131a.cs)
-                                                                /// </description>
-                                                                                                                            [Obsolete]
+                                                                                                                                /// Test Summary New 2 e
+                                                                                                                                /// </summary>
+                                                                                                                                /// <description>
+                                                                                                                                /// [5c78f7550591891ee8a5131a](Code block with generics_5c78f7550591891ee8a5131a.cs)
+                                                                                                                                /// </description>
+                                                                                                                                                                                                                                                            [Obsolete]
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
         /// <summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// this is the property for
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// </summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [Obsolete]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// this is the property for
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// </summary>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        
         
         
         
@@ -38,6 +39,7 @@ namespace DiffPlex
                                                         
                                                         
                                                         
+                                                        
                                                         [Obsolete]
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
@@ -49,16 +51,17 @@ namespace DiffPlex
         
         
         /// <summary>
-                                                                /// []()
-                                                                /// </summary>
-                                                                /// <description>
-                                                                /// ![abc](301805_5c776c5feacef318d0b2e6c8.jpg)
-                                                                /// </description>
-                                                                                                                        public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
+                                                                                                                                /// []()
+                                                                                                                                /// </summary>
+                                                                                                                                /// <description>
+                                                                                                                                /// ![abc](301805_5c776c5feacef318d0b2e6c8.jpg)
+                                                                                                                                /// </description>
+                                                                                                                                                                                                                                                        public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         
         
@@ -90,11 +93,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        
         
         
         
@@ -121,11 +126,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker)
         {
             return CreateCustomDiffs(oldText, newText, ignoreWhiteSpace, false, chunker);
         }
 
+        
         
         
         
@@ -204,9 +211,9 @@ namespace DiffPlex
         }
 
         /// <summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// </summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// </summary>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -354,6 +361,7 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        
         
         
         
