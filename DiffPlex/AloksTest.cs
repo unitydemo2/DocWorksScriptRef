@@ -23,8 +23,9 @@ namespace DiffPlex
                 return "not equal";
         }
 
-        ///     <summary>
+                ///     <summary>
                 ///     this method is to find diffs in 2 texts
+                ///     ![Flower image](InnerDir/beauty.jpg)
                 ///     </summary>
                 ///     <param name="oldText">this param is for existing text</param>
                 ///     <param name="newText">this param is for updated text</param>
