@@ -5,25 +5,53 @@ using DiffPlex.Model;
 namespace DiffPlex
 {
     
+    /// <summary>
+    /// Ssss<br/> <br/>  
+    /// ```
+    ///  using UnityEngine.Purchasing;
+    ///  public class MyStore : IStoreListener
+    ///  {
+    ///  public void InitializeStore()
+    ///  {
+    ///  var module = StandardPurchasingModule.Instance();
+    ///  var builder = ConfigurationBuilder.Instance(module);
+    ///  // Configure CloudMoolah
+    ///  builder.Configure().appKey = "d93f4564c41d463ed3d3cd207594ee1b";
+    ///  builder.Configure().hashKey = "cc";
+    ///  // For server-to-server (also called "online" games) transaction
+    ///  // logging, set IMoolahConfiguration.notificationURL.
+    ///  builder.Configure().notificationURL = "https://gameserver.example.com/callback";
+    ///  builder.Configure().SetMode(CloudMoolahMode.Production);
+    ///  // Add purchasable products. The product must be defined in the store.
+    ///  // Unity IAP provides the *ProductType* enumeration to specify the durability
+    ///  // of a purchasable product. CloudMoolah limits the product type to Consumable.
+    ///  builder.AddProduct("100.gold.coins", ProductType.Consumable);
+    ///  // Start asynchronous IAP initialization.
+    ///  UnityPurchasing.Initialize(this, builder);
+    ///  }
+    ///  }
+    /// ```
+    /// </summary>
     [Obsolete]
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
-        ///     <summary>
-                ///     this is the property for 
-                ///     </summary>
-                        [Obsolete]
+        /// <summary>
+                                /// this is the property for
+                                /// </summary>
+                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        
         
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateLineDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
-        /// <!-- Badly formed XML comment ignored for member "M:DiffPlex.Differ.CreateLineDiffs(System.String,System.String,System.Boolean,System.Boolean)" -->
-                        [Obsolete]
+        
+                                                        [Obsolete]
         public DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
             if (oldText == null) throw new ArgumentNullException(nameof(oldText));
@@ -32,11 +60,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase)
         {
@@ -58,11 +88,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        
         
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators)
         {
@@ -79,11 +111,13 @@ namespace DiffPlex
         }
 
         
+        
         public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker)
         {
             return CreateCustomDiffs(oldText, newText, ignoreWhiteSpace, false, chunker);
         }
 
+        
         
         public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, bool ignoreCase, Func<string, string[]> chunker)
         {
@@ -156,17 +190,10 @@ namespace DiffPlex
             return list.ToArray();
         }
 
-        ///     <summary>
-                ///     Finds the middle snake and the minimum length of the edit script comparing string A and B
-                ///     </summary>
-                ///     <param name="A"></param>
-                ///     <param name="startA">Lower bound inclusive</param>
-                ///     <param name="endA">Upper bound exclusive</param>
-                ///     <param name="B"></param>
-                ///     <param name="startB">lower bound inclusive</param>
-                ///     <param name="endB">upper bound exclusive</param>
-                ///     <returns></returns>
-                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+        /// <summary>
+                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+                                /// </summary>
+                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -314,6 +341,7 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        
         
         protected static void BuildModificationData(ModificationData A, ModificationData B)
         {
