@@ -6,25 +6,34 @@ namespace DiffPlex
 {
     
     /// <summary>
-                                /// Ssss<br/> <br/>  
-                                /// ```
-                                ///  Class ABC {
-                                ///  Int a;
-                                ///  Int b;
-                                ///  }
-                                /// ```
-                                /// </summary>
-                                                            [Obsolete]
+                                                                /// Ssss<br/> <br/>  
+                                                                /// ```
+                                                                ///  Class ABC {
+                                                                ///  Int a;
+                                                                ///  Int b;
+                                                                ///  }
+                                                                /// ```
+                                                                /// </summary>
+                                                                /// <description>
+                                                                /// ```
+                                                                ///  Class ASBC {
+                                                                ///  Int a;
+                                                                ///  Int basss;
+                                                                ///  }
+                                                                /// ```
+                                                                /// </description>
+                                                                                                                            [Obsolete]
     public class Differ : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
         /// <summary>
-                                                                                                                                                                                                                                                                /// this is the property for
-                                                                                                                                                                                                                                                                /// </summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [Obsolete]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// this is the property for
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// </summary>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        [Obsolete]
         public string obsoletedPropertyForTesting { get; set; }
 
+        
         
         
         
@@ -36,6 +45,7 @@ namespace DiffPlex
         }
 
         
+                                                        
                                                         
                                                         
                                                         
@@ -52,11 +62,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace)
         {
             return CreateCharacterDiffs(oldText, newText, ignoreWhitespace, false);
         }
 
+        
         
         
         
@@ -86,11 +98,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, char[] separators)
         {
             return CreateWordDiffs(oldText, newText, ignoreWhitespace, false, separators);
         }
 
+        
         
         
         
@@ -115,11 +129,13 @@ namespace DiffPlex
         
         
         
+        
         public DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker)
         {
             return CreateCustomDiffs(oldText, newText, ignoreWhiteSpace, false, chunker);
         }
 
+        
         
         
         
@@ -197,9 +213,9 @@ namespace DiffPlex
         }
 
         /// <summary>
-                                                                                                                                                                                                                                                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
-                                                                                                                                                                                                                                                                /// </summary>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// Finds the middle snake and the minimum length of the edit script comparing string A and B
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                /// </summary>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        protected static EditLengthResult CalculateEditLength(int[] A, int startA, int endA, int[] B, int startB, int endB)
         {
             int N = endA - startA;
             int M = endB - startB;
@@ -347,6 +363,7 @@ namespace DiffPlex
             throw new Exception("Should never get here");
         }
 
+        
         
         
         
