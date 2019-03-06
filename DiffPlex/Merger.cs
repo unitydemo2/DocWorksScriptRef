@@ -9,6 +9,7 @@ namespace DiffPlex
     ///         <summary>
                 ///         this is the class for meging 2 texts
                 ///         testing for pull by sirisha 1234567890-
+                ///         ![abc](codetest.cs)  testing for code blocks   
                 ///         </summary>
                 ///         <description>
                 ///         ![abc](birdsfly.jpg) testing for pull
