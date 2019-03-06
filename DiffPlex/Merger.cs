@@ -11,7 +11,6 @@ namespace DiffPlex
                 ///         testing for pull by sirisha 1234567890-
                 ///         </summary>
                 ///         <description>
-                ///         ![abc](butterfly.jpg)
                 ///         ![abc](birdsfly.jpg) testing for pull
                 ///         merging left and right texts and getting output as merged text
                 ///         </description>
