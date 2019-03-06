@@ -12,6 +12,7 @@ namespace DiffPlex
         ///     </summary>
         ///     <description>
         ///     ![abc](butterfly.jpg)
+        ///     ![abc](birdsfly.jpg) testing for pull
         ///     merging left and right texts and getting output as merged text
         ///     </description>
             public class Merger : IMerger
