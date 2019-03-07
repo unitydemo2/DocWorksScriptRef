@@ -10,21 +10,23 @@ namespace DiffPlex
 {
     
     /// <description>
-        /// ```
-        ///  Class ABC {
-        ///  Int a;
-        ///  Int b;
-        ///  }
-        /// ```
-        /// <br/>
-        /// </description>
-            public interface IMerger
+                /// ```
+                ///  Class ABC {
+                ///  Int a;
+                ///  Int b;
+                ///  }
+                /// ```
+                /// <br/>
+                /// </description>
+                            public interface IMerger
     {
+        
         
         
         
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         
         
