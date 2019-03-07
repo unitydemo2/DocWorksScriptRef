@@ -1,6 +1,11 @@
 namespace DiffPlex.Model
 {
     
+    /// <summary>
+    ///  This is created for tetsing the summary.
+    /// [CMS link from source controller for scriptref](IMerger.cs)
+    /// Link created for testing
+    ///</summary>
     public class NewPull
     {
         
