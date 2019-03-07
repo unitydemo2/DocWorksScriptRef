@@ -9,23 +9,19 @@ using System.Text;
 namespace DiffPlex
 {
     
-    /// <description>
-                /// ```
-                ///  Class ABC {
-                ///  Int a;
-                ///  Int b;
-                ///  }
-                /// ```
-                /// <br/>
-                /// </description>
-                            public interface IMerger
+    /// <summary>
+                                /// ABC<br/>  NSNSNS<br/>  SJSJSJSJ<br/>  SKSKSKSK
+                                /// </summary>
+                                                            public interface IMerger
     {
+        
         
         
         
         
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         
         
