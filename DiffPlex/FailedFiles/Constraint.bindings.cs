@@ -356,10 +356,10 @@ namespace UnityEngine.Animations
 #endif // UNITY_EDITOR
     }
 
-    /// <summary>
-    /// Constrains the rotation of an object relative to the rotation of one or more source objects.
-    /// </summary>
-    [UsedByNativeCode]
+    ///     <summary>
+    ///     Constrains the rotation of an object relative to the rotation of one or more source objects.
+    ///     </summary>
+        [UsedByNativeCode]
     [RequireComponent(typeof(Transform))]
     [NativeHeader("Modules/Animation/Constraints/RotationConstraint.h")]
     [NativeHeader("Modules/Animation/Constraints/Constraint.bindings.h")]
@@ -372,68 +372,68 @@ namespace UnityEngine.Animations
 
         private static extern void Internal_Create([Writable] RotationConstraint self);
 
-        /// <summary>
-        /// The weight of the constraint component.
-        /// </summary>
-        public extern float weight { get; set; }
+        ///     <summary>
+                ///     The weight of the constraint component.
+                ///     </summary>
+                        public extern float weight { get; set; }
 
-        /// <summary>
-        /// The rotation used when the sources have a total weight of 0.
-        /// </summary>
-        public extern Vector3 rotationAtRest { get; set; }
+        ///     <summary>
+                ///     The rotation used when the sources have a total weight of 0.
+                ///     </summary>
+                        public extern Vector3 rotationAtRest { get; set; }
 
-        /// <summary>
-        /// The offset from the constrained rotation.
-        /// </summary>
-        public extern Vector3 rotationOffset { get; set; }
+        ///     <summary>
+                ///     The offset from the constrained rotation.
+                ///     </summary>
+                        public extern Vector3 rotationOffset { get; set; }
 
-        /// <summary>
-        /// The axes affected by the RotationConstraint.
-        /// </summary>
-        /// <description>
-        /// Use this property to restrict the effect of the constraint on a particular axis.
-        /// </description>
-        /// <dw-legacy-code>
-        /// using UnityEngine.Animations;
-        /// public class ConstraintAxis
-        /// {
-        ///     public void ConstrainOnlyOnXY(RotationConstraint component)
-        ///     {
-        ///         component.rotationAxis = Axis.X | Axis.Y;
-        ///     }
-        /// }
-        /// </dw-legacy-code>
-        public extern Axis rotationAxis { get; set; }
+        ///     <summary>
+                ///     The axes affected by the RotationConstraint.
+                ///     </summary>
+                ///     <description>
+                ///     Use this property to restrict the effect of the constraint on a particular axis.
+                ///     </description>
+                ///     <dw-legacy-code>
+                ///     using UnityEngine.Animations;
+                ///     public class ConstraintAxis
+                ///     {
+                ///         public void ConstrainOnlyOnXY(RotationConstraint component)
+                ///         {
+                ///             component.rotationAxis = Axis.X | Axis.Y;
+                ///         }
+                ///     }
+                ///     </dw-legacy-code>
+                        public extern Axis rotationAxis { get; set; }
 
-        /// <summary>
-        /// Activates or deactivates the constraint.
-        /// </summary>
-        public extern bool constraintActive { get; set; }
-        /// <summary>
-        /// Locks the offset and rotation at rest.
-        /// </summary>
-        /// <description>
-        /// In Edit mode, unlock the constraint to update its offsets. In Play mode, the constraint is always locked.
-        /// </description>
-        public extern bool locked { get; set; }
+        ///     <summary>
+                ///     Activates or deactivates the constraint.
+                ///     </summary>
+                        public extern bool constraintActive { get; set; }
+        ///     <summary>
+                ///     Locks the offset and rotation at rest.
+                ///     </summary>
+                ///     <description>
+                ///     In Edit mode, unlock the constraint to update its offsets. In Play mode, the constraint is always locked.
+                ///     </description>
+                        public extern bool locked { get; set; }
 
-        /// <summary>
-        /// The number of sources set on the component (read-only).
-        /// </summary>
-        public int sourceCount { get { return GetSourceCountInternal(this); } }
+        ///     <summary>
+                ///     The number of sources set on the component (read-only).
+                ///     </summary>
+                        public int sourceCount { get { return GetSourceCountInternal(this); } }
         [FreeFunction("ConstraintBindings::GetSourceCount")]
         private static extern int GetSourceCountInternal([NotNull] RotationConstraint self);
 
-        /// <summary>
-        /// There is currently no documentation for this api.
-        /// </summary>
-        [FreeFunction(Name = "ConstraintBindings::GetSources", HasExplicitThis = true)]
+        ///     <summary>
+                ///     There is currently no documentation for this api.
+                ///     </summary>
+                        [FreeFunction(Name = "ConstraintBindings::GetSources", HasExplicitThis = true)]
         public extern void GetSources([NotNull] List<ConstraintSource> sources);
 
-        /// <summary>
-        /// There is currently no documentation for this api.
-        /// </summary>
-        public void SetSources(List<ConstraintSource> sources)
+        ///     <summary>
+                ///     There is currently no documentation for this api.
+                ///     </summary>
+                        public void SetSources(List<ConstraintSource> sources)
         {
             if (sources == null)
                 throw new ArgumentNullException("sources");
@@ -444,27 +444,27 @@ namespace UnityEngine.Animations
         [FreeFunction("ConstraintBindings::SetSources")]
         private static extern void SetSourcesInternal([NotNull] RotationConstraint self, List<ConstraintSource> sources);
 
-        /// <summary>
-        /// Adds a constraint source.
-        /// </summary>
-        /// <param name="source">
-        /// The source object and its weight.
-        /// </param>
-        /// <returns>
-        /// Returns the index of the added source.
-        /// </returns>
-        public extern int AddSource(ConstraintSource source);
+        ///     <summary>
+                ///     Adds a constraint source.
+                ///     </summary>
+                ///     <param name="source">
+                ///     The source object and its weight.
+                ///     </param>
+                ///     <returns>
+                ///     Returns the index of the added source.
+                ///     </returns>
+                        public extern int AddSource(ConstraintSource source);
 
-        /// <summary>
-        /// Removes a source from the component.
-        /// </summary>
-        /// <param name="index">
-        /// The index of the source to remove.
-        /// </param>
-        /// <description>
-        /// Throws InvalidOperationException, if the list of sources is empty. Throws ArgumentOutOfRangeException, if the index is invalid.
-        /// </description>
-        public void RemoveSource(int index)
+        ///     <summary>
+                ///     Removes a source from the component.
+                ///     </summary>
+                ///     <param name="index">
+                ///     The index of the source to remove.
+                ///     </param>
+                ///     <description>
+                ///     Throws InvalidOperationException, if the list of sources is empty. Throws ArgumentOutOfRangeException, if the index is invalid.
+                ///     </description>
+                        public void RemoveSource(int index)
         {
             ValidateSourceIndex(index);
             RemoveSourceInternal(index);
@@ -473,19 +473,19 @@ namespace UnityEngine.Animations
         [NativeName("RemoveSource")]
         private extern void RemoveSourceInternal(int index);
 
-        /// <summary>
-        /// Gets a constraint source by index.
-        /// </summary>
-        /// <param name="index">
-        /// The index of the source.
-        /// </param>
-        /// <returns>
-        /// The source object and its weight.
-        /// </returns>
-        /// <description>
-        /// Throws ArgumentOutOfRangeException, if the index is invalid.
-        /// </description>
-        public ConstraintSource GetSource(int index)
+        ///     <summary>
+                ///     Gets a constraint source by index.
+                ///     </summary>
+                ///     <param name="index">
+                ///     The index of the source.
+                ///     </param>
+                ///     <returns>
+                ///     The source object and its weight.
+                ///     </returns>
+                ///     <description>
+                ///     Throws ArgumentOutOfRangeException, if the index is invalid.
+                ///     </description>
+                        public ConstraintSource GetSource(int index)
         {
             ValidateSourceIndex(index);
             return GetSourceInternal(index);
@@ -494,19 +494,19 @@ namespace UnityEngine.Animations
         [NativeName("GetSource")]
         private extern ConstraintSource GetSourceInternal(int index);
 
-        /// <summary>
-        /// Sets a source at a specified index.
-        /// </summary>
-        /// <param name="index">
-        /// The index of the source to set.
-        /// </param>
-        /// <param name="source">
-        /// The source object and its weight.
-        /// </param>
-        /// <description>
-        /// Throws ArgumentOutOfRangeException, if the index is invalid.
-        /// </description>
-        public void SetSource(int index, ConstraintSource source)
+        ///     <summary>
+                ///     Sets a source at a specified index.
+                ///     </summary>
+                ///     <param name="index">
+                ///     The index of the source to set.
+                ///     </param>
+                ///     <param name="source">
+                ///     The source object and its weight.
+                ///     </param>
+                ///     <description>
+                ///     Throws ArgumentOutOfRangeException, if the index is invalid.
+                ///     </description>
+                        public void SetSource(int index, ConstraintSource source)
         {
             ValidateSourceIndex(index);
             SetSourceInternal(index, source);
@@ -532,26 +532,26 @@ namespace UnityEngine.Animations
         extern void ActivateWithZeroOffset();
         extern void UserUpdateOffset();
 
-        /// <summary>
-        /// There is currently no documentation for this api.
-        /// </summary>
-        void IConstraintInternal.ActivateAndPreserveOffset()
+        ///     <summary>
+                ///     There is currently no documentation for this api.
+                ///     </summary>
+                        void IConstraintInternal.ActivateAndPreserveOffset()
         {
             this.ActivateAndPreserveOffset();
         }
 
-        /// <summary>
-        /// There is currently no documentation for this api.
-        /// </summary>
-        void IConstraintInternal.ActivateWithZeroOffset()
+        ///     <summary>
+                ///     There is currently no documentation for this api.
+                ///     </summary>
+                        void IConstraintInternal.ActivateWithZeroOffset()
         {
             this.ActivateWithZeroOffset();
         }
 
-        /// <summary>
-        /// There is currently no documentation for this api.
-        /// </summary>
-        void IConstraintInternal.UserUpdateOffset()
+        ///     <summary>
+                ///     There is currently no documentation for this api.
+                ///     </summary>
+                        void IConstraintInternal.UserUpdateOffset()
         {
             this.UserUpdateOffset();
         }
