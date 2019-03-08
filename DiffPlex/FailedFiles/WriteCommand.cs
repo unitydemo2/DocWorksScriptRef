@@ -101,13 +101,8 @@ namespace UnityEditor.Build.Content
         }
     }
 
-    /// <summary>
-    /// Container for holding asset loading information for an AssetBundle to be built.
-    /// </summary>
-    /// <description>
-    /// Note: this class and its members exist to provide low-level support for the __Scriptable Build Pipeline__ package. This is intended for internal use only; use the <a href="https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@0.0-preview/manual/index.html">Scriptable Build Pipeline package</a> to implement a fully featured build pipeline. You can install this via the <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@1.8/manual/index.html">Unity Package Manager</a>.
-    /// </description>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.AssetBundleInfo" -->
+            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -117,13 +112,13 @@ namespace UnityEditor.Build.Content
     {
         [NativeName("bundleName")]
         private string m_BundleName;
-        /// <summary>
-        /// Friendly AssetBundle name.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[AssetBundleInfo]].
-        /// </description>
-        public string bundleName
+        ///     <summary>
+                ///     Friendly AssetBundle name.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[AssetBundleInfo]].
+                ///     </description>
+                        public string bundleName
         {
             get { return m_BundleName; }
             set { m_BundleName = value; }
@@ -131,13 +126,13 @@ namespace UnityEditor.Build.Content
 
         [NativeName("bundleAssets")]
         private List<AssetLoadInfo> m_BundleAssets;
-        /// <summary>
-        /// List of asset loading information for an AssetBundle.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[AssetBundleInfo]].
-        /// </description>
-        public List<AssetLoadInfo> bundleAssets
+        ///     <summary>
+                ///     List of asset loading information for an AssetBundle.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[AssetBundleInfo]].
+                ///     </description>
+                        public List<AssetLoadInfo> bundleAssets
         {
             get { return m_BundleAssets; }
             set { m_BundleAssets = value; }
