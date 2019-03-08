@@ -7,10 +7,12 @@ namespace UnityEditor.CrashReporting
 #if ENABLE_CLOUD_SERVICES_CRASH_REPORTING
 
     
+    
     [NativeHeader("Modules/UnityConnect/CrashReporting/CrashReportingSettings.h")]
     [StaticAccessor("GetCrashReportingSettings()")]
     public static partial class CrashReportingSettings
     {
+        
         
         public static extern bool enabled
         {
@@ -19,8 +21,10 @@ namespace UnityEditor.CrashReporting
         }
 
         
+        
         public static extern bool captureEditorExceptions { get; set; }
 
+        
         
         [NativeThrows]
         public static extern UInt32 logBufferSize { get; set; }
