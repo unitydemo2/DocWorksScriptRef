@@ -135,13 +135,8 @@ namespace UnityEditor.Build.Content
     }
 
 
-    /// <summary>
-    /// Container for holding preload information for a given serialized Scene in an AssetBundle.
-    /// </summary>
-    /// <description>
-    /// Note: this class and its members exist to provide low-level support for the __Scriptable Build Pipeline__ package. This is intended for internal use only; use the <a href="https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@latest/index.html">Scriptable Build Pipeline package</a> to implement a fully featured build pipeline. You can install this via the <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest/index.html">Unity Package Manager</a>.
-    /// </description>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.SceneLoadInfo" -->
+            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -151,13 +146,13 @@ namespace UnityEditor.Build.Content
     {
         [NativeName("asset")]
         private GUID m_Asset;
-        /// <summary>
-        /// GUID for the given Scene.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.SceneLoadInfo]].
-        /// </description>
-        public GUID asset
+        ///     <summary>
+                ///     GUID for the given Scene.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.SceneLoadInfo]].
+                ///     </description>
+                        public GUID asset
         {
             get { return m_Asset; }
             set { m_Asset = value; }
@@ -165,13 +160,13 @@ namespace UnityEditor.Build.Content
 
         [NativeName("address")]
         private string m_Address;
-        /// <summary>
-        /// Friendly name used to load the built Scene from an asset bundle.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.SceneLoadInfo]].
-        /// </description>
-        public string address
+        ///     <summary>
+                ///     Friendly name used to load the built Scene from an asset bundle.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.SceneLoadInfo]].
+                ///     </description>
+                        public string address
         {
             get { return m_Address; }
             set { m_Address = value; }
@@ -179,14 +174,14 @@ namespace UnityEditor.Build.Content
 
         [NativeName("internalName")]
         private string m_InternalName;
-        /// <summary>
-        /// Internal name used to load the built Scene from an asset bundle.
-        /// </summary>
-        /// <description>
-        /// Internal names are used for loading to avoid collision if Scenes with similar file names are added to the same AssetBundle.
-        /// Internal use only. See [[Build.Content.SceneLoadInfo]].
-        /// </description>
-        public string internalName
+        ///     <summary>
+                ///     Internal name used to load the built Scene from an asset bundle.
+                ///     </summary>
+                ///     <description>
+                ///     Internal names are used for loading to avoid collision if Scenes with similar file names are added to the same AssetBundle.
+                ///     Internal use only. See [[Build.Content.SceneLoadInfo]].
+                ///     </description>
+                        public string internalName
         {
             get { return m_InternalName; }
             set { m_InternalName = value; }
