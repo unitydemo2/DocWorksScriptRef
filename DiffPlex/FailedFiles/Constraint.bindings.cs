@@ -5,29 +5,29 @@ using UnityEngine.Scripting;
 
 namespace UnityEngine.Animations
 {
-    /// <summary>
-    /// Represents the axes used in 3D space.
-    /// </summary>
-    [NativeType("Modules/Animation/Constraints/ConstraintEnums.h")]
+    ///     <summary>
+        ///     Represents the axes used in 3D space.
+        ///     </summary>
+            [NativeType("Modules/Animation/Constraints/ConstraintEnums.h")]
     [Flags]
     public enum Axis
     {
-        /// <summary>
-        /// Represents the case when no axis is specified.
-        /// </summary>
-        None = 0,
-        /// <summary>
-        /// Represents the X axis.
-        /// </summary>
-        X = 1,
-        /// <summary>
-        /// Represents the Y axis.
-        /// </summary>
-        Y = 2,
-        /// <summary>
-        /// Represents the Z axis.
-        /// </summary>
-        Z = 4
+        ///     <summary>
+                ///     Represents the case when no axis is specified.
+                ///     </summary>
+                        None = 0,
+        ///     <summary>
+                ///     Represents the X axis.
+                ///     </summary>
+                        X = 1,
+        ///     <summary>
+                ///     Represents the Y axis.
+                ///     </summary>
+                        Y = 2,
+        ///     <summary>
+                ///     Represents the Z axis.
+                ///     </summary>
+                        Z = 4
     }
 
     ///     <summary>
