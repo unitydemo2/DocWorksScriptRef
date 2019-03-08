@@ -263,13 +263,8 @@ namespace UnityEditor.Build.Content
         }
     }
 
-    /// <summary>
-    /// Container for holding information about a serialized file to be written.
-    /// </summary>
-    /// <description>
-    /// Note: this class and its members exist to provide low-level support for the __Scriptable Build Pipeline__ package. This is intended for internal use only; use the <a href="https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@latest/index.html">Scriptable Build Pipeline package</a> to implement a fully featured build pipeline. You can install this via the <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest/index.html">Unity Package Manager</a>.
-    /// </description>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.WriteCommand" -->
+            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -279,13 +274,13 @@ namespace UnityEditor.Build.Content
     {
         [NativeName("fileName")]
         private string m_FileName;
-        /// <summary>
-        /// Final file name on disk of the serialized file.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.WriteCommand]].
-        /// </description>
-        public string fileName
+        ///     <summary>
+                ///     Final file name on disk of the serialized file.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.WriteCommand]].
+                ///     </description>
+                        public string fileName
         {
             get { return m_FileName; }
             set { m_FileName = value; }
@@ -293,13 +288,13 @@ namespace UnityEditor.Build.Content
 
         [NativeName("internalName")]
         private string m_InternalName;
-        /// <summary>
-        /// Internal name used by the loading system for a serialized file.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.WriteCommand]].
-        /// </description>
-        public string internalName
+        ///     <summary>
+                ///     Internal name used by the loading system for a serialized file.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.WriteCommand]].
+                ///     </description>
+                        public string internalName
         {
             get { return m_InternalName; }
             set { m_InternalName = value; }
@@ -307,13 +302,13 @@ namespace UnityEditor.Build.Content
 
         [NativeName("serializeObjects")]
         private List<SerializationInfo> m_SerializeObjects;
-        /// <summary>
-        /// List of objects and their order contained inside a serialized file.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.WriteCommand]].
-        /// </description>
-        public List<SerializationInfo> serializeObjects
+        ///     <summary>
+                ///     List of objects and their order contained inside a serialized file.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.WriteCommand]].
+                ///     </description>
+                        public List<SerializationInfo> serializeObjects
         {
             get { return m_SerializeObjects; }
             set { m_SerializeObjects = value; }
