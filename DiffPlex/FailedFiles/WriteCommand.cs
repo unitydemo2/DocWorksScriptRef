@@ -97,7 +97,7 @@ namespace UnityEditor.Build.Content
     }
 
     /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.AssetBundleInfo" -->
-            [Serializable]
+                            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -108,12 +108,12 @@ namespace UnityEditor.Build.Content
         [NativeName("bundleName")]
         private string m_BundleName;
         ///     <summary>
-                ///     Friendly AssetBundle name.
-                ///     </summary>
-                ///     <description>
-                ///     Internal use only. See [[AssetBundleInfo]].
-                ///     </description>
-                        public string bundleName
+                                ///     Friendly AssetBundle name.
+                                ///     </summary>
+                                ///     <description>
+                                ///     Internal use only. See [[AssetBundleInfo]].
+                                ///     </description>
+                                                        public string bundleName
         {
             get { return m_BundleName; }
             set { m_BundleName = value; }
@@ -122,12 +122,12 @@ namespace UnityEditor.Build.Content
         [NativeName("bundleAssets")]
         private List<AssetLoadInfo> m_BundleAssets;
         ///     <summary>
-                ///     List of asset loading information for an AssetBundle.
-                ///     </summary>
-                ///     <description>
-                ///     Internal use only. See [[AssetBundleInfo]].
-                ///     </description>
-                        public List<AssetLoadInfo> bundleAssets
+                                ///     List of asset loading information for an AssetBundle.
+                                ///     </summary>
+                                ///     <description>
+                                ///     Internal use only. See [[AssetBundleInfo]].
+                                ///     </description>
+                                                        public List<AssetLoadInfo> bundleAssets
         {
             get { return m_BundleAssets; }
             set { m_BundleAssets = value; }
