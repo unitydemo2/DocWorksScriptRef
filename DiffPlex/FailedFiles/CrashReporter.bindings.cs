@@ -5,6 +5,7 @@ using UnityEngine.Bindings;
 namespace UnityEngine.CrashReportHandler
 {
     
+    
     [NativeHeader("Modules/CrashReporting/Public/CrashReporter.h")]
     [StaticAccessor("CrashReporting::CrashReporter::Get()", StaticAccessorType.Dot)]
     public partial class CrashReportHandler
@@ -14,17 +15,21 @@ namespace UnityEngine.CrashReportHandler
         }
 
         
+        
         [NativeProperty("Enabled")]
         public static extern bool enableCaptureExceptions { get; set; }
 
+        
         
         [NativeThrows]
         public static extern UInt32 logBufferSize { get; set; }
 
         
+        
         [NativeThrows]
         public static extern string GetUserMetadata(string key);
 
+        
         
         [NativeThrows]
         public static extern void SetUserMetadata(string key, string value);
