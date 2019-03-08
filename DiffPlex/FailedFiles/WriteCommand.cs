@@ -227,13 +227,8 @@ namespace UnityEditor.Build.Content
     }
 
 
-    /// <summary>
-    /// Container for holding object serialization order information for a build.
-    /// </summary>
-    /// <description>
-    /// Note: this class and its members exist to provide low-level support for the __Scriptable Build Pipeline__ package. This is intended for internal use only; use the <a href="https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@latest/index.html">Scriptable Build Pipeline package</a> to implement a fully featured build pipeline. You can install this via the <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest/index.html">Unity Package Manager</a>.
-    /// </description>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.SerializationInfo" -->
+            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -241,13 +236,13 @@ namespace UnityEditor.Build.Content
     {
         [NativeName("serializationObject")]
         internal ObjectIdentifier m_SerializationObject;
-        /// <summary>
-        /// Source object to be serialzied to disk.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.SerializationInfo]].
-        /// </description>
-        public ObjectIdentifier serializationObject
+        ///     <summary>
+                ///     Source object to be serialzied to disk.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.SerializationInfo]].
+                ///     </description>
+                        public ObjectIdentifier serializationObject
         {
             get { return m_SerializationObject; }
             set { m_SerializationObject = value; }
@@ -255,13 +250,13 @@ namespace UnityEditor.Build.Content
 
         [NativeName("serializationIndex")]
         internal long m_SerializationIndex;
-        /// <summary>
-        /// Order in which the object will be serialized to disk.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.SerializationInfo]].
-        /// </description>
-        public long serializationIndex
+        ///     <summary>
+                ///     Order in which the object will be serialized to disk.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.SerializationInfo]].
+                ///     </description>
+                        public long serializationIndex
         {
             get { return m_SerializationIndex; }
             set { m_SerializationIndex = value; }
