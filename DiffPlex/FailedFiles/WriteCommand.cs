@@ -193,13 +193,8 @@ namespace UnityEditor.Build.Content
         }
     }
 
-    /// <summary>
-    /// Container for holding asset loading information for a streamed Scene AssetBundle to be built.
-    /// </summary>
-    /// <description>
-    /// Note: this class and its members exist to provide low-level support for the __Scriptable Build Pipeline__ package. This is intended for internal use only; use the <a href="https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@latest/index.html">Scriptable Build Pipeline package</a> to implement a fully featured build pipeline. You can install this via the <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest/index.html">Unity Package Manager</a>.
-    /// </description>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.SceneBundleInfo" -->
+            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -209,13 +204,13 @@ namespace UnityEditor.Build.Content
     {
         [NativeName("bundleName")]
         private string m_BundleName;
-        /// <summary>
-        /// Friendly AssetBundle name.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.SceneBundleInfo]].
-        /// </description>
-        public string bundleName
+        ///     <summary>
+                ///     Friendly AssetBundle name.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.SceneBundleInfo]].
+                ///     </description>
+                        public string bundleName
         {
             get { return m_BundleName; }
             set { m_BundleName = value; }
@@ -223,13 +218,13 @@ namespace UnityEditor.Build.Content
 
         [NativeName("bundleScenes")]
         private List<SceneLoadInfo> m_BundleScenes;
-        /// <summary>
-        /// List of Scene loading information for an AssetBundle.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.SceneBundleInfo]].
-        /// </description>
-        public List<SceneLoadInfo> bundleScenes
+        ///     <summary>
+                ///     List of Scene loading information for an AssetBundle.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.SceneBundleInfo]].
+                ///     </description>
+                        public List<SceneLoadInfo> bundleScenes
         {
             get { return m_BundleScenes; }
             set { m_BundleScenes = value; }
