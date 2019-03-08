@@ -6,13 +6,8 @@ using UnityEngine.Scripting;
 
 namespace UnityEditor.Build.Content
 {
-    /// <summary>
-    /// Container for holding a list of preload objects for a Scene to be built.
-    /// </summary>
-    /// <description>
-    /// Note: this class and its members exist to provide low-level support for the __Scriptable Build Pipeline__ package. This is intended for internal use only; use the <a href="https://docs.unity3d.com/Packages/com.unity.scriptablebuildpipeline@latest/index.html">Scriptable Build Pipeline package</a> to implement a fully featured build pipeline. You can install this via the <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest/index.html">Unity Package Manager</a>.
-    /// </description>
-    [Serializable]
+    /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.PreloadInfo" -->
+            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -22,13 +17,13 @@ namespace UnityEditor.Build.Content
     {
         [NativeName("preloadObjects")]
         internal List<ObjectIdentifier> m_PreloadObjects;
-        /// <summary>
-        /// List of Objects for a serialized Scene that need to be preloaded.
-        /// </summary>
-        /// <description>
-        /// Internal use only. See [[Build.Content.PreloadInfo]].
-        /// </description>
-        public List<ObjectIdentifier> preloadObjects
+        ///     <summary>
+                ///     List of Objects for a serialized Scene that need to be preloaded.
+                ///     </summary>
+                ///     <description>
+                ///     Internal use only. See [[Build.Content.PreloadInfo]].
+                ///     </description>
+                        public List<ObjectIdentifier> preloadObjects
         {
             get { return m_PreloadObjects; }
             set { m_PreloadObjects = value; }
