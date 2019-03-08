@@ -2,7 +2,11 @@
 
 namespace DiffPlex
 {
-    [Obsolete]
+#if ENABLE_CLOTH
+#endif
+
+#if ENABLE_CLOUD_PROJECT_ID
+#endif
     public class AloksTest
     {
         private static readonly string[] emptyStringArray = new string[0];
