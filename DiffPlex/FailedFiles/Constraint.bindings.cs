@@ -54,88 +54,88 @@ namespace UnityEngine.Animations
                         public float weight { get { return m_Weight; } set { m_Weight = value; } }
     }
 
-    /// <summary>
-    /// The common interface for constraint components.
-    /// </summary>
-    public interface IConstraint
+    ///     <summary>
+        ///     The common interface for constraint components.
+        ///     </summary>
+            public interface IConstraint
     {
-        /// <summary>
-        /// The weight of the constraint component.
-        /// </summary>
-        float weight { get; set; }
+        ///     <summary>
+                ///     The weight of the constraint component.
+                ///     </summary>
+                        float weight { get; set; }
 
-        /// <summary>
-        /// Activate or deactivate the constraint.
-        /// </summary>
-        bool constraintActive { get; set; }
-        /// <summary>
-        /// Lock or unlock the offset and position at rest.
-        /// </summary>
-        /// <description>
-        /// In Edit mode, unlock the constraint to update its offsets. In Play mode, the constraint is always locked.
-        /// </description>
-        bool locked { get; set; }
+        ///     <summary>
+                ///     Activate or deactivate the constraint.
+                ///     </summary>
+                        bool constraintActive { get; set; }
+        ///     <summary>
+                ///     Lock or unlock the offset and position at rest.
+                ///     </summary>
+                ///     <description>
+                ///     In Edit mode, unlock the constraint to update its offsets. In Play mode, the constraint is always locked.
+                ///     </description>
+                        bool locked { get; set; }
 
-        /// <summary>
-        /// Gets the number of sources currently set on the component.
-        /// </summary>
-        int sourceCount { get; }
+        ///     <summary>
+                ///     Gets the number of sources currently set on the component.
+                ///     </summary>
+                        int sourceCount { get; }
 
-        /// <summary>
-        /// Add a constraint source.
-        /// </summary>
-        /// <param name="source">
-        /// The source object and its weight.
-        /// </param>
-        /// <returns>
-        /// Returns the index of the added source.
-        /// </returns>
-        int AddSource(ConstraintSource source);
-        /// <summary>
-        /// Removes a source from the component.
-        /// </summary>
-        /// <param name="index">
-        /// The index of the source to remove.
-        /// </param>
-        /// <description>
-        /// Throws InvalidOperationException, if the list of sources is empty. Throws ArgumentOutOfRangeException, if the index is invalid.
-        /// </description>
-        void RemoveSource(int index);
-        /// <summary>
-        /// Gets a constraint source by index.
-        /// </summary>
-        /// <param name="index">
-        /// The index of the source.
-        /// </param>
-        /// <returns>
-        /// The source object and its weight.
-        /// </returns>
-        /// <description>
-        /// Throws ArgumentOutOfRangeException, if the index is invalid.
-        /// </description>
-        ConstraintSource GetSource(int index);
-        /// <summary>
-        /// Sets a source at a specified index.
-        /// </summary>
-        /// <param name="index">
-        /// The index of the source to set.
-        /// </param>
-        /// <param name="source">
-        /// The source object and its weight.
-        /// </param>
-        /// <description>
-        /// Throws ArgumentOutOfRangeException, if the index is invalid.
-        /// </description>
-        void SetSource(int index, ConstraintSource source);
+        ///     <summary>
+                ///     Add a constraint source.
+                ///     </summary>
+                ///     <param name="source">
+                ///     The source object and its weight.
+                ///     </param>
+                ///     <returns>
+                ///     Returns the index of the added source.
+                ///     </returns>
+                        int AddSource(ConstraintSource source);
+        ///     <summary>
+                ///     Removes a source from the component.
+                ///     </summary>
+                ///     <param name="index">
+                ///     The index of the source to remove.
+                ///     </param>
+                ///     <description>
+                ///     Throws InvalidOperationException, if the list of sources is empty. Throws ArgumentOutOfRangeException, if the index is invalid.
+                ///     </description>
+                        void RemoveSource(int index);
+        ///     <summary>
+                ///     Gets a constraint source by index.
+                ///     </summary>
+                ///     <param name="index">
+                ///     The index of the source.
+                ///     </param>
+                ///     <returns>
+                ///     The source object and its weight.
+                ///     </returns>
+                ///     <description>
+                ///     Throws ArgumentOutOfRangeException, if the index is invalid.
+                ///     </description>
+                        ConstraintSource GetSource(int index);
+        ///     <summary>
+                ///     Sets a source at a specified index.
+                ///     </summary>
+                ///     <param name="index">
+                ///     The index of the source to set.
+                ///     </param>
+                ///     <param name="source">
+                ///     The source object and its weight.
+                ///     </param>
+                ///     <description>
+                ///     Throws ArgumentOutOfRangeException, if the index is invalid.
+                ///     </description>
+                        void SetSource(int index, ConstraintSource source);
 
-        /// <summary>
-        /// There is currently no documentation for this api.
-        /// </summary>
-        void GetSources(List<ConstraintSource> sources);
-        /// <summary>
-        /// There is currently no documentation for this api.
-        /// </summary>
-        void SetSources(List<ConstraintSource> sources);
+        ///     <summary>
+                ///     There is currently no documentation for this api.
+                ///     </summary>
+                        void GetSources(List<ConstraintSource> sources);
+        ///     <summary>
+                ///     There is currently no documentation for this api.
+                ///     </summary>
+                        void SetSources(List<ConstraintSource> sources);
     }
 
     internal interface IConstraintInternal
