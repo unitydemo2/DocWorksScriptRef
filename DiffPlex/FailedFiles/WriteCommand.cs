@@ -31,7 +31,7 @@ namespace UnityEditor.Build.Content
     }
 
     /// <!-- Badly formed XML comment ignored for member "T:UnityEditor.Build.Content.AssetLoadInfo" -->
-            [Serializable]
+                            [Serializable]
     [UsedByNativeCode]
     [NativeAsStruct]
     [StructLayout(LayoutKind.Sequential)]
@@ -42,12 +42,12 @@ namespace UnityEditor.Build.Content
         [NativeName("asset")]
         internal GUID m_Asset;
         ///     <summary>
-                ///     GUID for the given asset.
-                ///     </summary>
-                ///     <description>
-                ///     Internal use only. See [[AssetLoadInfo]].
-                ///     </description>
-                        public GUID asset
+                                ///     GUID for the given asset.
+                                ///     </summary>
+                                ///     <description>
+                                ///     Internal use only. See [[AssetLoadInfo]].
+                                ///     </description>
+                                                        public GUID asset
         {
             get { return m_Asset; }
             set { m_Asset = value; }
@@ -56,12 +56,12 @@ namespace UnityEditor.Build.Content
         [NativeName("address")]
         internal string m_Address;
         ///     <summary>
-                ///     Friendly name used to load the built asset.
-                ///     </summary>
-                ///     <description>
-                ///     Internal use only. See [[AssetLoadInfo]].
-                ///     </description>
-                        public string address
+                                ///     Friendly name used to load the built asset.
+                                ///     </summary>
+                                ///     <description>
+                                ///     Internal use only. See [[AssetLoadInfo]].
+                                ///     </description>
+                                                        public string address
         {
             get { return m_Address; }
             set { m_Address = value; }
@@ -70,12 +70,12 @@ namespace UnityEditor.Build.Content
         [NativeName("includedObjects")]
         internal List<ObjectIdentifier> m_IncludedObjects;
         ///     <summary>
-                ///     List of objects that an asset contains in its source file.
-                ///     </summary>
-                ///     <description>
-                ///     Internal use only. See [[AssetLoadInfo]].
-                ///     </description>
-                        public List<ObjectIdentifier> includedObjects
+                                ///     List of objects that an asset contains in its source file.
+                                ///     </summary>
+                                ///     <description>
+                                ///     Internal use only. See [[AssetLoadInfo]].
+                                ///     </description>
+                                                        public List<ObjectIdentifier> includedObjects
         {
             get { return m_IncludedObjects; }
             set { m_IncludedObjects = value; }
@@ -84,12 +84,12 @@ namespace UnityEditor.Build.Content
         [NativeName("referencedObjects")]
         internal List<ObjectIdentifier> m_ReferencedObjects;
         ///     <summary>
-                ///     List of objects that an asset references.
-                ///     </summary>
-                ///     <description>
-                ///     Internal use only. See [[AssetLoadInfo]].
-                ///     </description>
-                        public List<ObjectIdentifier> referencedObjects
+                                ///     List of objects that an asset references.
+                                ///     </summary>
+                                ///     <description>
+                                ///     Internal use only. See [[AssetLoadInfo]].
+                                ///     </description>
+                                                        public List<ObjectIdentifier> referencedObjects
         {
             get { return m_ReferencedObjects; }
             set { m_ReferencedObjects = value; }
