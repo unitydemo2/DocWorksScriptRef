@@ -30,10 +30,10 @@ namespace UnityEngine.Animations
         Z = 4
     }
 
-    /// <summary>
-    /// Represents a source for the constraint.
-    /// </summary>
-    [System.Serializable]
+    ///     <summary>
+        ///     Represents a source for the constraint.
+        ///     </summary>
+            [System.Serializable]
     [NativeType(CodegenOptions = CodegenOptions.Custom, Header = "Modules/Animation/Constraints/ConstraintSource.h", IntermediateScriptingStructName = "MonoConstraintSource")]
     [NativeHeader("Modules/Animation/Constraints/Constraint.bindings.h")]
     [UsedByNativeCode]
@@ -44,14 +44,14 @@ namespace UnityEngine.Animations
         [NativeName("weight")]
         private float m_Weight;
 
-        /// <summary>
-        /// The transform component of the source object.
-        /// </summary>
-        public Transform sourceTransform { get { return m_SourceTransform; } set { m_SourceTransform = value; } }
-        /// <summary>
-        /// The weight of the source in the evaluation of the constraint.
-        /// </summary>
-        public float weight { get { return m_Weight; } set { m_Weight = value; } }
+        ///     <summary>
+                ///     The transform component of the source object.
+                ///     </summary>
+                        public Transform sourceTransform { get { return m_SourceTransform; } set { m_SourceTransform = value; } }
+        ///     <summary>
+                ///     The weight of the source in the evaluation of the constraint.
+                ///     </summary>
+                        public float weight { get { return m_Weight; } set { m_Weight = value; } }
     }
 
     /// <summary>
