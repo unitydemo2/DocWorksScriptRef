@@ -9,14 +9,28 @@ using System.Text;
 namespace DiffPlex
 {
     /// <summary>
-    ///  This is created for tetsing the summary.
-    /// [AltNameToLink](IDiffer.cs)
-    ///</summary>
-    public interface IMerger
+        /// ```
+        ///  Class ABC {
+        ///  Int a;
+        ///  Int b;
+        ///  }
+        /// ```
+        /// </summary>
+        /// <description>
+        /// ```
+        ///  Class ABC {
+        ///  Int a;
+        ///  Int b;
+        ///  }
+        /// ```
+        /// </description>
+            public interface IMerger
     {
+        
         
         SideBySideDiffModel GetMergedText(List<string> list);
 
+        
         
         SideBySideDiffModel GetMergedText(SideBySideDiffModel model);
     }
