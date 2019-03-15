@@ -6,7 +6,7 @@ namespace DiffPlex
 {
     
    
-    public class Differ : IDiffer
+    public class DifferNew : IDiffer
     {
         private static readonly string[] emptyStringArray = new string[0];
 
