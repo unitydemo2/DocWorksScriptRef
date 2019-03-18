@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DiffPlex
 {
-    class SortedMethods
+    public class SortedMethods
     {
         public void CopyFrom(int[] array)
         {
