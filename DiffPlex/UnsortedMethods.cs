@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DiffPlex
 {
-    class UnsortedMethods
+    public class UnsortedMethods
     {
         /// <summary>
         /// This method will sort list in given order 
