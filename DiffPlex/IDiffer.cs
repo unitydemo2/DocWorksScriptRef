@@ -4,13 +4,14 @@ using DiffPlex.Model;
 namespace DiffPlex
 {
     /// <summary>
-                                                                                                                                /// Provides methods for generate differences between texts
-                                                                                                                                /// </summary>
-                                                                                                                                /// <description>
-                                                                                                                                /// ![](card1_5c6e9a980846494e5456dc0f.png)
-                                                                                                                                /// </description>
-                                                                                                                                                                                                                                                            public interface IDiffer
+                                                                                                                                                                                                                                                                /// Provides methods for generate differences between texts
+                                                                                                                                                                                                                                                                /// </summary>
+                                                                                                                                                                                                                                                                /// <description>
+                                                                                                                                                                                                                                                                /// ![Enfield image](Enfiled_5c8b6c823180ac3c34a3dc04.jpg)
+                                                                                                                                                                                                                                                                /// </description>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            public interface IDiffer
     {
+        
         
         
         
@@ -22,7 +23,9 @@ namespace DiffPlex
         
         
         
+        
         DiffResult CreateLineDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase);
+        
         
         
         
@@ -34,7 +37,9 @@ namespace DiffPlex
         
         
         
+        
         DiffResult CreateCharacterDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase);
+        
         
         
         
@@ -46,13 +51,16 @@ namespace DiffPlex
         
         
         
+        
         DiffResult CreateWordDiffs(string oldText, string newText, bool ignoreWhitespace, bool ignoreCase, char[] separators);
         
         
         
         
         
+        
         DiffResult CreateCustomDiffs(string oldText, string newText, bool ignoreWhiteSpace, Func<string, string[]> chunker);
+        
         
         
         
