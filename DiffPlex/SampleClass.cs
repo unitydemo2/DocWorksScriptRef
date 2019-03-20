@@ -5,6 +5,7 @@ namespace DiffPlex
 
    
     
+    
     public class SampleClass
     {
         private static readonly string[] emptyStringArray = new string[0];
@@ -12,9 +13,10 @@ namespace DiffPlex
         ///         this is the property for 
         ///             ![Enfield image](Enfiled.jpg)
         ///         </summary>
-                        
+                                
         public string PropertyForTesting { get; set; }
 
+        
         
         
         
